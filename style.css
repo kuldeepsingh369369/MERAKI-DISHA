@@ -124,7 +124,8 @@ a {
 .hero-card,
 .card,
 .program-card,
-.video-card {
+.video-card,
+.update-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -208,6 +209,32 @@ h1 {
   background: #e6f1eb;
 }
 
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.stat {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .hero-media {
   overflow: hidden;
   position: relative;
@@ -281,6 +308,36 @@ h1 {
 }
 
 .program-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.update-card {
+  overflow: hidden;
+}
+
+.update-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.update-body {
+  padding: 18px;
+}
+
+.update-body h3 {
+  margin-bottom: 10px;
+}
+
+.update-body p {
   color: var(--muted);
   margin-bottom: 0;
 }
@@ -406,6 +463,7 @@ footer {
   .about-grid,
   .cta-banner,
   .programs-grid,
+  .updates-grid,
   .videos-grid {
     grid-template-columns: 1fr;
   }
@@ -444,6 +502,10 @@ footer {
 
   .nav-links.open {
     display: flex;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
   }
 }
 
