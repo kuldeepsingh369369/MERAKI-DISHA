@@ -2,6 +2,11 @@
   const DISMISS_KEY = "mirai_bar_dismissed_until";
   const SUBSCRIBED_KEY = "mirai_bar_subscribed";
   const DISMISS_DAYS = 7;
+  const currentLang = localStorage.getItem("mirai_lang") || "en";
+
+  function t(en, hi) {
+    return currentLang === "hi" ? hi : en;
+  }
 
   function isDismissed() {
     if (localStorage.getItem(SUBSCRIBED_KEY)) return true;
@@ -23,26 +28,26 @@
     const bar = document.createElement("div");
     bar.className = "newsletter-bar";
     bar.id = "newsletterBar";
-    bar.setAttribute("aria-label", "Stay updated");
+    bar.setAttribute("aria-label", t("Stay updated", "अपडेट पाते रहें"));
     bar.setAttribute("role", "complementary");
     bar.innerHTML = `
       <div class="newsletter-bar-inner">
         <div class="newsletter-bar-copy">
-          <strong>Get field updates</strong>
-          <span>Stay connected to the work on the ground.</span>
+          <strong>${t("Get field updates", "फील्ड अपडेट पाएँ")}</strong>
+          <span>${t("Stay connected to the work on the ground.", "ज़मीन पर हो रहे काम से जुड़े रहें।")}</span>
         </div>
         <form class="newsletter-bar-form" id="newsletterBarForm" action="https://api.staticforms.xyz/submit" method="POST">
           <input type="hidden" name="accessKey" value="sf_2d95c0e7ead6546ba848cecc" />
-          <input type="hidden" name="subject" value="Newsletter Sign-up — Mirai Society" />
+          <input type="hidden" name="subject" value="${t("Newsletter Sign-up — Mirai Society", "न्यूज़लेटर साइन-अप — Mirai Society")}" />
           <div class="newsletter-bar-inputs" id="newsletterBarInputs">
-            <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
-            <button type="submit" class="btn btn-primary" id="newsletterBarSubmit">Subscribe</button>
+            <input type="email" name="email" placeholder="your@email.com" required aria-label="${t("Email address", "ईमेल पता")}" />
+            <button type="submit" class="btn btn-primary" id="newsletterBarSubmit">${t("Subscribe", "सदस्य बनें")}</button>
           </div>
           <p class="newsletter-bar-success" id="newsletterBarSuccess" style="display:none;">
-            You are subscribed! We will keep you updated from the field.
+            ${t("You are subscribed! We will keep you updated from the field.", "आप सदस्य बन गए हैं! हम आपको फील्ड से अपडेट देते रहेंगे।")}
           </p>
         </form>
-        <button class="newsletter-bar-close" id="newsletterBarClose" aria-label="Dismiss">×</button>
+        <button class="newsletter-bar-close" id="newsletterBarClose" aria-label="${t("Dismiss", "बंद करें")}">×</button>
       </div>
     `;
     document.body.appendChild(bar);
@@ -94,7 +99,7 @@
     const inputsEl = document.getElementById("newsletterBarInputs");
 
     submitBtn.disabled = true;
-    submitBtn.textContent = "Sending…";
+    submitBtn.textContent = t("Sending…", "भेजा जा रहा है…");
 
     try {
       const res = await fetch("https://api.staticforms.xyz/submit", {
@@ -110,11 +115,11 @@
         setTimeout(() => hideBar(bar), 4000);
       } else {
         submitBtn.disabled = false;
-        submitBtn.textContent = "Subscribe";
+        submitBtn.textContent = t("Subscribe", "सदस्य बनें");
       }
     } catch {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Subscribe";
+      submitBtn.textContent = t("Subscribe", "सदस्य बनें");
     }
   });
 })();

@@ -3,6 +3,44 @@ function setText(id, value) {
   if (el) el.textContent = value || "";
 }
 
+function uiText(key) {
+  const lang = window.currentLang || "en";
+  const copy = {
+    en: {
+      team: "Team",
+      teamDetailsSoon: "Team details will appear here soon.",
+      noPrograms: "No programs added yet.",
+      noUpdates: "No updates added yet.",
+      noGallery: "No gallery images added yet.",
+      noVideos: "No videos added yet.",
+      videoUnavailable: "Video link unavailable.",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      imageViewer: "Image viewer",
+      sending: "Sending…",
+      sendInterest: "Send Interest",
+      submitRegistration: "Submit Registration"
+    },
+    hi: {
+      team: "टीम",
+      teamDetailsSoon: "टीम का विवरण जल्द यहाँ दिखाई देगा।",
+      noPrograms: "अभी कोई कार्यक्रम जोड़ा नहीं गया है।",
+      noUpdates: "अभी कोई अपडेट जोड़ा नहीं गया है।",
+      noGallery: "अभी कोई गैलरी छवि जोड़ी नहीं गई है।",
+      noVideos: "अभी कोई वीडियो जोड़ा नहीं गया है।",
+      videoUnavailable: "वीडियो लिंक उपलब्ध नहीं है।",
+      openMenu: "मेनू खोलें",
+      closeMenu: "मेनू बंद करें",
+      imageViewer: "छवि दर्शक",
+      sending: "भेजा जा रहा है…",
+      sendInterest: "रुचि भेजें",
+      submitRegistration: "पंजीकरण भेजें"
+    }
+  };
+
+  return copy[lang]?.[key] || copy.en[key] || "";
+}
+
 function escapeHTML(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => {
     const entities = {
@@ -17,8 +55,17 @@ function escapeHTML(value) {
   });
 }
 
+function resolveAssetPath(path) {
+  if (!path) return "";
+  if (/^(?:[a-z]+:)?\/\//i.test(path) || path.startsWith("/") || path.startsWith("../") || path.startsWith("./") || path.startsWith("#")) {
+    return path;
+  }
+
+  return /(?:^|\/)hi(?:\/|$)/.test(window.location.pathname) ? `../${path}` : path;
+}
+
 function fallbackImage() {
-  return siteContent.hero?.image || siteContent.gallery?.[0] || "";
+  return resolveAssetPath(siteContent.hero?.image || siteContent.gallery?.[0] || "");
 }
 
 function isPlaceholderUrl(url) {
@@ -97,7 +144,7 @@ function setImage(id, src, alt = "") {
   const el = document.getElementById(id);
   if (!el) return;
 
-  el.src = src || fallbackImage();
+  el.src = resolveAssetPath(src) || fallbackImage();
   el.alt = alt;
   bindImageFallback(el, ".hero-media");
 }
@@ -208,7 +255,7 @@ function renderPrograms() {
   if (!container) return;
 
   if (!programs.length) {
-    container.innerHTML = '<div class="empty-note">No programs added yet.</div>';
+    container.innerHTML = `<div class="empty-note">${escapeHTML(uiText("noPrograms"))}</div>`;
     return;
   }
 
@@ -351,14 +398,14 @@ function renderTeam() {
   if (!gridEl) return;
 
   if (!members.length) {
-    gridEl.innerHTML = '<div class="empty-note">Team details will appear here soon.</div>';
+    gridEl.innerHTML = `<div class="empty-note">${escapeHTML(uiText("teamDetailsSoon"))}</div>`;
     return;
   }
 
   const groups = [];
 
   members.forEach((member) => {
-    const category = member.category || "Team";
+    const category = member.category || uiText("team");
     const group = groups.find((entry) => entry.category === category);
 
     if (group) {
@@ -379,19 +426,21 @@ function renderTeam() {
           <div class="team-grid team-group-grid">
             ${group.members
               .map((member) => {
-                const role = member.role === "Core Team Member" ? "" : member.role || "";
+                const role = ["Core Team Member", "मुख्य टीम सदस्य"].includes(member.role)
+                  ? ""
+                  : member.role || "";
 
                 return `
                   <article class="team-card">
                     <img
                       class="team-image"
-                      src="${escapeHTML(member.image || fallbackImage())}"
+                      src="${escapeHTML(resolveAssetPath(member.image) || fallbackImage())}"
                       alt="${escapeHTML(member.name)}"
                       loading="lazy"
                       decoding="async"
                     />
                     <div class="team-body">
-                      <span class="team-category">${escapeHTML(member.category || "Team")}</span>
+                      <span class="team-category">${escapeHTML(member.category || uiText("team"))}</span>
                       <h3>${escapeHTML(member.name)}</h3>
                       ${role ? `<p class="team-role">${escapeHTML(role)}</p>` : ""}
                       <p>${escapeHTML(member.bio || "")}</p>
@@ -487,9 +536,9 @@ function renderSupport() {
 
 function updateCardMarkup(item) {
   return `
-    <article class="update-card">
-      <img
-        src="${escapeHTML(item.image || fallbackImage())}"
+        <article class="update-card">
+          <img
+        src="${escapeHTML(resolveAssetPath(item.image) || fallbackImage())}"
         alt="${escapeHTML(item.alt || item.title)}"
         data-caption="${escapeHTML(
           [item.title, item.date, item.location].filter(Boolean).join(" • ") || item.alt || item.title
@@ -526,7 +575,7 @@ function renderUpdates() {
     const latestUpdates = updates.slice(0, 3);
 
     if (!latestUpdates.length) {
-      previewContainer.innerHTML = '<div class="empty-note">No updates added yet.</div>';
+      previewContainer.innerHTML = `<div class="empty-note">${escapeHTML(uiText("noUpdates"))}</div>`;
     } else {
       previewContainer.innerHTML = latestUpdates.map(updateCardMarkup).join("");
       bindUpdateImages(previewContainer);
@@ -536,7 +585,7 @@ function renderUpdates() {
   if (!archiveContainer) return;
 
   if (!updates.length) {
-    archiveContainer.innerHTML = '<div class="empty-note">No updates added yet.</div>';
+    archiveContainer.innerHTML = `<div class="empty-note">${escapeHTML(uiText("noUpdates"))}</div>`;
     return;
   }
 
@@ -582,10 +631,10 @@ function renderGallery() {
 
   if (!gallery.length) {
     if (previewContainer) {
-      previewContainer.innerHTML = '<div class="empty-note">No gallery images added yet.</div>';
+      previewContainer.innerHTML = `<div class="empty-note">${escapeHTML(uiText("noGallery"))}</div>`;
     }
     if (archiveContainer) {
-      archiveContainer.innerHTML = '<div class="empty-note">No gallery images added yet.</div>';
+      archiveContainer.innerHTML = `<div class="empty-note">${escapeHTML(uiText("noGallery"))}</div>`;
     }
     return;
   }
@@ -601,7 +650,7 @@ function renderGallery() {
       return `
         <figure class="gallery-item">
           <img
-            src="${escapeHTML(image || fallbackImage())}"
+            src="${escapeHTML(resolveAssetPath(image) || fallbackImage())}"
             alt="${escapeHTML(alt)}"
             data-caption="${escapeHTML(caption || alt)}"
             loading="lazy"
@@ -658,7 +707,7 @@ function initLightbox() {
     lightboxImage.alt = alt;
     lightboxCaption.textContent = caption;
     const dialog = lightbox.querySelector("[role='dialog']");
-    if (dialog) dialog.setAttribute("aria-label", caption || alt || "Image viewer");
+    if (dialog) dialog.setAttribute("aria-label", caption || alt || uiText("imageViewer"));
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
@@ -701,10 +750,10 @@ function renderVideos() {
 
   if (!videos.length) {
     if (previewContainer) {
-      previewContainer.innerHTML = '<div class="empty-note">No videos added yet.</div>';
+      previewContainer.innerHTML = `<div class="empty-note">${escapeHTML(uiText("noVideos"))}</div>`;
     }
     if (archiveContainer) {
-      archiveContainer.innerHTML = '<div class="empty-note">No videos added yet.</div>';
+      archiveContainer.innerHTML = `<div class="empty-note">${escapeHTML(uiText("noVideos"))}</div>`;
     }
     return;
   }
@@ -719,7 +768,7 @@ function renderVideos() {
           <article class="video-card">
             <div class="video-body">
               <h3>${escapeHTML(video.title)}</h3>
-              <p>${escapeHTML(video.description || "Video link unavailable.")}</p>
+              <p>${escapeHTML(video.description || uiText("videoUnavailable"))}</p>
             </div>
           </article>
         `;
@@ -829,13 +878,13 @@ function initMenu() {
   function closeMenu() {
     nav.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Open menu");
+    toggle.setAttribute("aria-label", uiText("openMenu"));
   }
 
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
     toggle.setAttribute("aria-expanded", String(isOpen));
-    toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    toggle.setAttribute("aria-label", isOpen ? uiText("closeMenu") : uiText("openMenu"));
   });
 
   nav.querySelectorAll("a").forEach((link) => {
@@ -960,7 +1009,7 @@ function handleStaticForm(formId, submitBtnId, successId, errorId, resetLabel) {
   const label = resetLabel || btn?.textContent || "Send";
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
-    if (btn) { btn.disabled = true; btn.textContent = "Sending\u2026"; }
+    if (btn) { btn.disabled = true; btn.textContent = uiText("sending"); }
     if (successEl) successEl.style.display = "none";
     if (errorEl) errorEl.style.display = "none";
     try {
@@ -1059,8 +1108,8 @@ function init() {
   renderContact();
   renderTrust();
   renderVolunteer();
-  handleStaticForm("volunteerForm", "volunteerSubmit", "volunteerSuccess", "volunteerError", "Send Interest");
-  handleStaticForm("schoolForm", "schoolSubmit", "schoolSuccess", "schoolError", "Submit Registration");
+  handleStaticForm("volunteerForm", "volunteerSubmit", "volunteerSuccess", "volunteerError", uiText("sendInterest"));
+  handleStaticForm("schoolForm", "schoolSubmit", "schoolSuccess", "schoolError", uiText("submitRegistration"));
   initMenu();
   initLightbox();
   initWhatsAppFloat();
