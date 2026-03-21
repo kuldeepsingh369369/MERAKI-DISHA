@@ -657,6 +657,8 @@ function initLightbox() {
     lightboxImage.src = src;
     lightboxImage.alt = alt;
     lightboxCaption.textContent = caption;
+    const dialog = lightbox.querySelector("[role='dialog']");
+    if (dialog) dialog.setAttribute("aria-label", caption || alt || "Image viewer");
     lightbox.classList.add("open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
@@ -857,6 +859,187 @@ function initMenu() {
   });
 }
 
+function renderTrust() {
+  const trust = siteContent.trust || {};
+  const regEl = document.getElementById("trustRegistration");
+  const regNoteEl = document.getElementById("trustRegNote");
+  const taxEl = document.getElementById("trust80G");
+  const fundEl = document.getElementById("trustFundGrid");
+
+  if (regEl) regEl.textContent = trust.registration || "";
+  if (regNoteEl) regNoteEl.textContent = trust.regNote || "";
+  if (taxEl) taxEl.textContent = trust.section80G || "";
+
+  if (fundEl) {
+    const items = trust.fundUsage || [];
+    fundEl.innerHTML = items
+      .map(
+        (item) => `
+        <div class="fund-item">
+          <div class="fund-bar-wrap">
+            <div class="fund-bar" style="width:${escapeHTML(String(item.percent))}%"></div>
+          </div>
+          <div class="fund-label">
+            <strong>${escapeHTML(item.label)} <span class="fund-percent">${escapeHTML(String(item.percent))}%</span></strong>
+            <span>${escapeHTML(item.description)}</span>
+          </div>
+        </div>
+      `
+      )
+      .join("");
+  }
+}
+
+function renderImpactStories() {
+  const container = document.getElementById("impactStoriesGrid");
+  const stories = siteContent.impactStories || [];
+
+  if (!container || !stories.length) return;
+
+  container.innerHTML = stories
+    .map(
+      (story) => `
+      <article class="story-card story-card-alt">
+        <span class="section-kicker">${escapeHTML(story.date || "")}${story.location ? " · " + escapeHTML(story.location) : ""}</span>
+        <h3>${escapeHTML(story.title)}</h3>
+        <blockquote class="story-quote story-quote-sm">${escapeHTML(story.quote)}</blockquote>
+        <p>${escapeHTML(story.description)}</p>
+        <div class="highlight-list">
+          ${(story.highlights || []).map((h) => `<span class="highlight-chip">${escapeHTML(h)}</span>`).join("")}
+        </div>
+        <p class="story-attribution">${escapeHTML(story.attribution || "")}</p>
+      </article>
+    `
+    )
+    .join("");
+}
+
+function renderVolunteer() {
+  const titleEl = document.getElementById("volunteerTitle");
+  const descEl = document.getElementById("volunteerDescription");
+  const waysEl = document.getElementById("volunteerWays");
+  const volunteer = siteContent.volunteer || {};
+
+  if (titleEl) titleEl.textContent = volunteer.title || "";
+  if (descEl) descEl.textContent = volunteer.description || "";
+
+  if (waysEl) {
+    const ways = volunteer.ways || [];
+    waysEl.innerHTML = ways
+      .map(
+        (item) => `
+        <div class="volunteer-way">
+          <strong>${escapeHTML(item.title)}</strong>
+          <span>${escapeHTML(item.description)}</span>
+        </div>
+      `
+      )
+      .join("");
+  }
+}
+
+function initWhatsAppFloat() {
+  const btn = document.getElementById("whatsappFloat");
+  if (!btn) return;
+
+  const url = siteContent.contact?.whatsapp || "";
+  if (!url) {
+    btn.style.display = "none";
+    return;
+  }
+
+  btn.href = url;
+}
+
+function handleStaticForm(formId, submitBtnId, successId, errorId, resetLabel) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+  const btn = document.getElementById(submitBtnId);
+  const successEl = document.getElementById(successId);
+  const errorEl = document.getElementById(errorId);
+  const label = resetLabel || btn?.textContent || "Send";
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    if (btn) { btn.disabled = true; btn.textContent = "Sending\u2026"; }
+    if (successEl) successEl.style.display = "none";
+    if (errorEl) errorEl.style.display = "none";
+    try {
+      const res = await fetch("https://api.staticforms.xyz/submit", {
+        method: "POST",
+        body: new FormData(form),
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset();
+        if (successEl) successEl.style.display = "block";
+        if (btn) btn.style.display = "none";
+      } else {
+        if (errorEl) errorEl.style.display = "block";
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+      }
+    } catch {
+      if (errorEl) errorEl.style.display = "block";
+      if (btn) { btn.disabled = false; btn.textContent = label; }
+    }
+  });
+}
+
+function renderSchoolPartnership() {
+  const sp = siteContent.schoolPartnership || {};
+  const titleEl = document.getElementById("schoolPartnershipTitle");
+  const descEl = document.getElementById("schoolPartnershipDescription");
+  const statsEl = document.getElementById("programStatsGrid");
+  const howEl = document.getElementById("missionHowGrid");
+  const whyEl = document.getElementById("whyItMattersGrid");
+
+  if (titleEl) titleEl.textContent = sp.title || "";
+  if (descEl) descEl.textContent = sp.description || "";
+
+  if (statsEl) {
+    const stats = sp.programStats || [];
+    statsEl.innerHTML = stats.map(s => `
+      <div class="stat">
+        <strong>${escapeHTML(s.value)}</strong>
+        <span>${escapeHTML(s.label)}</span>
+      </div>
+    `).join("");
+  }
+
+  if (howEl) {
+    const steps = sp.how || [];
+    howEl.innerHTML = steps.map(step => `
+      <div class="mission-step">
+        <div class="mission-step-num">${escapeHTML(step.step)}</div>
+        <div class="mission-step-body">
+          <h3>${escapeHTML(step.title)}</h3>
+          <p>${escapeHTML(step.description)}</p>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  if (whyEl) {
+    const items = sp.whyItMatters || [];
+    whyEl.innerHTML = items.map(item => `
+      <article class="program-card difference-card">
+        <h3>${escapeHTML(item.title)}</h3>
+        <p>${escapeHTML(item.description)}</p>
+      </article>
+    `).join("");
+  }
+}
+
+function renderMissionHighlightCards() {
+  const container = document.getElementById("missionHighlightCards");
+  const highlights = (siteContent.mission || {}).highlights || [];
+  if (!container || !highlights.length) return;
+  container.innerHTML = highlights.map(item => `
+    <article class="program-card proof-card">
+      <h3>${escapeHTML(item)}</h3>
+    </article>
+  `).join("");
+}
+
 function init() {
   renderHero();
   renderStats();
@@ -868,14 +1051,21 @@ function init() {
   renderBarriers();
   renderFutureReadiness();
   renderImpactStory();
+  renderImpactStories();
   renderSupport();
   renderUpdates();
   renderGallery();
   renderVideos();
   renderContact();
+  renderTrust();
+  renderVolunteer();
+  handleStaticForm("volunteerForm", "volunteerSubmit", "volunteerSuccess", "volunteerError", "Send Interest");
+  handleStaticForm("schoolForm", "schoolSubmit", "schoolSuccess", "schoolError", "Submit Registration");
   initMenu();
   initLightbox();
-  document.getElementById("year").textContent = new Date().getFullYear();
+  initWhatsAppFloat();
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 }
 
 init();

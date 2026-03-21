@@ -2,7 +2,7 @@ const siteContent = {
   hero: {
     title: "A youth-led NGO helping children stay connected to education through direct work with students, families, and schools.",
     subtitle:
-      "Mirai Society is led by young teachers and professionals delivering practical educational support on the ground in Uttarakhand, with a model built to grow across India over time.",
+      "Mirai Society is a youth-led NGO building a national education movement — starting from the ground in Uttarakhand, and growing across India with a model rooted in direct field work, community trust, and consistent presence.",
     image: "images/hero.jpeg"
   },
 
@@ -328,6 +328,33 @@ const siteContent = {
         "We met with parents and community members to discuss regular school attendance, support at home, and why staying engaged in a child’s learning changes long-term outcomes.",
       image: "images/gallery-1.jpg",
       alt: "Parents and community members gathered during a Mirai Society awareness meeting"
+    },
+    {
+      title: "Community Reading Circle",
+      date: "March 2026",
+      location: "Uttarakhand",
+      description:
+        "A weekly community reading circle was introduced, bringing together children from different age groups to read, share stories, and build a habit of regular learning outside school hours.",
+      image: "images/gallery-2.jpg",
+      alt: "Children gathered in a community reading circle organised by Mirai Society"
+    },
+    {
+      title: "Teacher Coordination Workshop",
+      date: "February 2026",
+      location: "Uttarakhand",
+      description:
+        "Local teachers and Mirai Society volunteers met to align on learning gaps, coordinate support for struggling students, and build a shared understanding of how community help can complement classroom teaching.",
+      image: "images/gallery-3.jpg",
+      alt: "Teachers and Mirai Society team in a coordination workshop"
+    },
+    {
+      title: "Digital Awareness Session",
+      date: "January 2026",
+      location: "Uttarakhand",
+      description:
+        "Children were introduced to basic digital concepts through a hands-on session, helping them understand how computers and the internet connect to learning, careers, and the world beyond their immediate surroundings.",
+      image: "images/gallery-4.jpg",
+      alt: "Children during a digital awareness session with Mirai Society"
     }
   ],
 
@@ -369,5 +396,121 @@ const siteContent = {
     whatsapp: "https://wa.me/919761191140",
     instagram: "https://www.instagram.com/miraisociety_",
     facebook: "https://www.facebook.com/share/18QomgV2py/"
+  },
+
+  trust: {
+    registration: "Registered Society · Uttarakhand (Base) · Operating across India",
+    regNote: "Registration documents are available on request and shared with institutional donors and partners.",
+    section80G: "80G / 12A tax exemption documentation is being finalised. We are happy to share our registration details with any donor who requires them — please reach us directly.",
+    fundUsage: [
+      {
+        label: "Direct program delivery",
+        percent: 75,
+        description: "Learning materials, school kits, field visits, and direct support for children"
+      },
+      {
+        label: "Community outreach",
+        percent: 15,
+        description: "Family engagement meetings, awareness sessions, school coordination"
+      },
+      {
+        label: "Operations & logistics",
+        percent: 10,
+        description: "Field coordination, communication, and team support"
+      }
+    ]
+  },
+
+  impactStories: [
+    {
+      title: "A student who stopped raising her hand — started leading the group",
+      quote:
+        "During a March 2026 session, a girl who had been disengaged for months began helping younger children with reading exercises once she received consistent encouragement and her own set of materials.",
+      description:
+        "What changed was not the curriculum. It was the consistency of attention and the simple fact that she had materials that were hers. Within two sessions she was among the most active participants — and began encouraging others to stay engaged.",
+      attribution: "Mirai Society field team reflection",
+      date: "March 2026",
+      location: "Uttarakhand",
+      highlights: [
+        "Went from disengaged to group leader in two sessions",
+        "Personal ownership of materials changed her relationship with learning",
+        "Consistent presence mattered more than a single intervention"
+      ]
+    },
+    {
+      title: "A parent who never attended school now brings four neighbours to every meeting",
+      quote:
+        "After the January 2026 awareness meeting, a father who had never attended school himself began showing up at every Mirai Society gathering — and bringing others from his neighbourhood.",
+      description:
+        "He said no one had ever explained how much his presence at home could shape his children's school performance. Now he is one of the most consistent community voices at our family engagement sessions.",
+      attribution: "Mirai Society community team note",
+      date: "February 2026",
+      location: "Uttarakhand",
+      highlights: [
+        "One conversation created a sustained community connection",
+        "Family presence at home directly influences school engagement",
+        "Community trust multiplies when one person leads by example"
+      ]
+    }
+  ],
+
+  schoolPartnership: {
+    title: "Mirai Learning Center",
+    subtitle: "Bridging the gap between school enrollment and real learning",
+    description:
+      "Many children across India remain enrolled in school but cannot attend regularly — due to distance, family responsibilities, economic pressures, or other barriers. Mirai Learning Center gives these children a place to learn every day, while keeping them connected to their school for exams and official progress.",
+    how: [
+      {
+        step: "1",
+        title: "School registers students",
+        description:
+          "Partner schools identify students who are enrolled but unable to attend regularly and register them with Mirai Learning Center."
+      },
+      {
+        step: "2",
+        title: "Students learn at the center",
+        description:
+          "Registered students attend Mirai Learning Center for their daily education — taught by our team of teachers and volunteers."
+      },
+      {
+        step: "3",
+        title: "Exams at school",
+        description:
+          "Students appear for their exams at their registered school, maintaining official enrollment and earning their qualifications."
+      }
+    ],
+    programStats: [
+      { value: "3", label: "Programs currently running" },
+      { value: "3", label: "Programs completed last year" },
+      { value: "Soon", label: "More programs launching" }
+    ],
+    whyItMatters: [
+      {
+        title: "Children stay officially enrolled",
+        description:
+          "Students keep their school enrollment intact, sit for exams, and earn qualifications — without losing their right to formal education."
+      },
+      {
+        title: "Learning happens every day",
+        description:
+          "Instead of falling behind, children continue their education at the center with structured, teacher-led daily sessions."
+      },
+      {
+        title: "Schools reach more students",
+        description:
+          "Partner schools can support children they would otherwise lose to dropout, strengthening community-wide educational outcomes."
+      }
+    ]
+  },
+
+  volunteer: {
+    title: "Join Mirai Society",
+    description:
+      "Whether you can give a few hours a month or want to be part of our regular field team — there is a meaningful role for you here.",
+    ways: [
+      { title: "Teach or mentor", description: "Run a learning session, mentor a child, or support study activities on the ground." },
+      { title: "Professional skills", description: "Help with design, fundraising, communications, or any skill the team needs." },
+      { title: "Local outreach", description: "Help us connect with schools, families, or community groups in your area." }
+    ]
   }
 };
