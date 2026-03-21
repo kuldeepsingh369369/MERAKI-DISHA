@@ -8,7 +8,7 @@ The website is built using **pure HTML, CSS, and JavaScript** and is hosted on *
 
 ## 🚀 Live Website
 
-👉 https://miraisociety.org
+👉 https://www.miraisociety.org
 
 ---
 
@@ -184,7 +184,7 @@ Mirai Society is committed to improving access to education for children in rura
 
 If you want to contribute or collaborate, feel free to reach out:
 
-📧 [hello@miraisociety.org](mailto:hello@miraisociety.org)
+📧 [miraisocietyuttarakhand@gmail.com](mailto:miraisocietyuttarakhand@gmail.com)
 
 ---
 
