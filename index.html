@@ -6,60 +6,86 @@
   <title>Mirai Society</title>
   <meta
     name="description"
-    content="Mirai Society is an NGO helping children in rural areas through education, outreach, and community support."
+    content="Mirai Society is a youth-led nonprofit supporting children through direct educational work with students, families, and schools."
   />
   <meta name="theme-color" content="#1f7a4f" />
+  <meta property="og:title" content="Mirai Society" />
+  <meta
+    property="og:description"
+    content="A youth-led nonprofit supporting children through practical educational work with students, families, and schools."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/hero.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mirai Society" />
+  <meta
+    name="twitter:description"
+    content="A youth-led nonprofit supporting children through practical educational work with students, families, and schools."
+  />
+  <meta name="twitter:image" content="images/hero.jpeg" />
+  <link rel="icon" href="images/logo.jpg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+  <div class="top-meta">
+    <div class="container top-meta-inner">
+      <div class="top-contact" id="topContact"></div>
+      <div class="top-socials" id="topSocials" aria-label="Social media links"></div>
+    </div>
+  </div>
   <header class="topbar">
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Mirai Society home">
-        <div class="brand-mark">M</div>
+        <img class="brand-mark" src="images/logo.jpg" alt="Mirai Society logo" />
         <div>
           <div class="brand-title">Mirai Society</div>
-          <small class="brand-subtitle">Education for rural children</small>
+          <small class="brand-subtitle">Education for every dream</small>
         </div>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
         ☰
       </button>
 
       <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#mission">Mission</a>
+        <a href="team.html">Team</a>
         <a href="#programs">Programs</a>
-        <a href="#updates">Updates</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#videos">Videos</a>
-        <a href="#contact">Contact</a>
+        <a href="donate.html">Donate</a>
+        <a href="updates.html">Updates</a>
+        <a href="media.html">Media</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="mainContent">
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-card">
-          <div class="eyebrow">🌱 Building brighter futures</div>
+          <div class="eyebrow">Community-led education support</div>
           <h1 id="heroTitle"></h1>
           <p class="hero-text" id="heroSubtitle"></p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="#programs">Our Work</a>
-            <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+            <a class="btn btn-primary" href="donate.html">Support the Work</a>
+            <a class="btn btn-secondary" href="#programs">See Our Work</a>
           </div>
-
-          <div class="stats" id="statsGrid"></div>
         </div>
 
         <div class="hero-card hero-media">
-          <img id="heroImage" src="" alt="Mirai Society hero" />
+          <img id="heroImage" src="" alt="Mirai Society hero" fetchpriority="high" />
           <div class="media-badge">
-            <strong>Education. Hope. Opportunity.</strong>
+            <strong>Energetic action. Trusted presence.</strong>
             <div class="media-badge-text">
-              Supporting rural children through learning and community action.
+              Teachers and young professionals supporting children through practical educational help and trusted community partnership.
             </div>
           </div>
         </div>
@@ -70,10 +96,12 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="section-kicker">Who we are</span>
             <h2 id="aboutTitle"></h2>
             <p id="aboutDescription"></p>
           </div>
         </div>
+        <div class="stats stats-section" id="statsGrid"></div>
       </div>
     </section>
 
@@ -81,22 +109,41 @@
       <div class="container">
         <div class="about-grid">
           <div class="card">
+            <span class="section-kicker">Why we exist</span>
             <h3 id="missionTitle"></h3>
             <p id="missionDescription"></p>
+            <div class="highlight-list" id="missionHighlights"></div>
           </div>
 
-          <div class="card">
-            <h3>What this website is for</h3>
+          <div class="card card-accent">
+            <span class="section-kicker">How change happens</span>
+            <h3>Small interventions, consistent presence</h3>
             <p>
-              This is a lightweight, static website for Mirai Society. You can update
-              your text, images, videos, and contact details whenever needed by editing
-              one simple file.
+              Real progress often comes from simple support repeated consistently:
+              timely supplies, families who feel included, and communities that stay
+              engaged in a child's education.
             </p>
-            <p class="muted no-margin">
-              No backend required. Just update content and push to GitHub.
-            </p>
+            <div class="highlight-list">
+              <span class="highlight-chip">Supplies on time</span>
+              <span class="highlight-chip">Families included</span>
+              <span class="highlight-chip">Communities engaged</span>
+            </div>
           </div>
         </div>
+        <div class="programs-grid proof-grid" id="proofGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="difference">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Why we are different</span>
+            <h2 id="differenceTitle"></h2>
+            <p id="differenceDescription"></p>
+          </div>
+        </div>
+        <div class="programs-grid difference-grid" id="differenceGrid"></div>
       </div>
     </section>
 
@@ -104,9 +151,10 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="section-kicker">What we do</span>
             <h2>Our Programs</h2>
             <p>
-              Highlight the key ways Mirai Society supports children and communities.
+              Our work combines educational support, family engagement, and community-level action that can deepen locally and expand over time.
             </p>
           </div>
         </div>
@@ -114,15 +162,102 @@
       </div>
     </section>
 
+    <section class="section" id="barriers">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">The real gap</span>
+            <h2 id="barriersTitle"></h2>
+            <p id="barriersDescription"></p>
+          </div>
+        </div>
+        <div class="programs-grid barriers-grid" id="barriersGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="future-readiness">
+      <div class="container">
+        <div class="future-shell">
+          <div class="future-copy">
+            <span class="section-kicker section-kicker-light">Future readiness</span>
+            <h2 id="futureTitle"></h2>
+            <p id="futureDescription"></p>
+            <p class="future-note" id="futureNote"></p>
+          </div>
+          <div class="future-points" id="futurePoints"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact-story">
+      <div class="container">
+        <div class="story-shell">
+          <div class="story-card">
+            <span class="section-kicker">Impact story</span>
+            <h2 id="storyTitle"></h2>
+            <div class="story-meta" id="storyMeta"></div>
+            <blockquote class="story-quote" id="storyQuote"></blockquote>
+            <p id="storyDescription"></p>
+            <div class="highlight-list story-highlights" id="storyHighlights"></div>
+            <p class="story-attribution" id="storyAttribution"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section current-needs-section" id="current-needs">
+      <div class="container">
+        <div class="current-needs-strip">
+          <div class="current-needs-copy">
+            <span class="section-kicker">Current needs</span>
+            <h2 id="currentNeedsTitle">What is most useful right now</h2>
+            <p id="currentNeedsDescription">
+              We keep this list practical so supporters can respond to what children and the
+              field team need most at this moment.
+            </p>
+          </div>
+          <div class="highlight-list current-needs-list" id="currentNeedsList">
+            <span class="highlight-chip">Children's books and reading material</span>
+            <span class="highlight-chip">Notebooks, pens, pencils, and stationery</span>
+            <span class="highlight-chip">Teaching materials for daily sessions</span>
+            <span class="highlight-chip">Support for ongoing field visits and learning activities</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <div class="support-shell">
+          <div class="support-copy">
+            <span class="section-kicker">Support</span>
+            <h2 id="supportTitle"></h2>
+            <p id="supportDescription"></p>
+            <div class="support-quick-actions">
+              <a class="btn btn-primary" href="donate.html">Donate or Sponsor</a>
+              <a class="btn btn-secondary" href="team.html">See the Team Behind the Work</a>
+            </div>
+            <p class="support-note" id="supportNote"></p>
+          </div>
+          <div class="support-panel">
+            <div class="support-methods" id="supportWays"></div>
+            <div class="support-grid" id="supportGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="updates">
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="section-kicker">Highlights</span>
             <h2>Updates</h2>
             <p>
-              Important milestones, field visits, and moments from Mirai Society’s work.
+              Recent field activities, milestone moments, and on-ground progress from our work with children and families.
             </p>
           </div>
+          <a class="btn btn-secondary" href="updates.html">View all updates</a>
         </div>
         <div class="updates-grid" id="updatesGrid"></div>
       </div>
@@ -132,11 +267,13 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="section-kicker">Visual stories</span>
             <h2>Gallery</h2>
             <p>
-              A visual look at the work, people, and communities behind Mirai Society.
+              Images from learning sessions, field visits, and the communities that shape our work.
             </p>
           </div>
+          <a class="btn btn-secondary" href="media.html">View all media</a>
         </div>
         <div class="gallery-grid" id="galleryGrid"></div>
       </div>
@@ -146,39 +283,87 @@
       <div class="container">
         <div class="section-head">
           <div>
+            <span class="section-kicker">Field footage</span>
             <h2>Videos</h2>
             <p>
-              Share field visits, community stories, and awareness videos through YouTube links.
+              Short video moments from the field that show how our work looks on the ground.
             </p>
           </div>
+          <a class="btn btn-secondary" href="media.html">View all media</a>
         </div>
         <div class="videos-grid" id="videosGrid"></div>
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section" id="team-preview">
       <div class="container">
-        <div class="cta-banner">
-          <div>
-            <h2 class="banner-title">Support the mission</h2>
-            <p class="banner-text">
-              Reach out to collaborate, volunteer, support, or learn more about Mirai Society.
+        <div class="team-preview">
+          <div class="team-preview-copy">
+            <span class="section-kicker">Team</span>
+            <h2>Meet the people behind Mirai Society</h2>
+            <p>
+              Mirai Society is run by young teachers, founders, and professionals working
+              together across leadership, management, and field coordination. Visit the full
+              team page to meet the people driving this mission forward.
             </p>
           </div>
-          <div class="cta-actions" id="contactActions"></div>
+          <div class="team-preview-actions">
+            <a class="btn btn-primary" href="team.html">View Full Team</a>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">×</button>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Expanded image">
+      <img class="lightbox-image" id="lightboxImage" src="" alt="" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Mirai Society</strong><br />
-        Helping children in rural areas through education and community support.
+    <div class="container footer-shell">
+      <div class="footer-cta">
+        <div class="footer-cta-copy">
+          <span class="section-kicker">Support a child’s learning journey</span>
+          <h2 class="footer-cta-title">Help turn access, exposure, and encouragement into real opportunity.</h2>
+        </div>
+        <a class="btn btn-primary" href="donate.html">Go to Donation Page</a>
       </div>
-      <div>
-        © <span id="year"></span> Mirai Society. All rights reserved.
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="section-kicker">Mirai Society</span>
+          <h2 class="footer-title">Community-rooted work for children's education.</h2>
+          <p class="footer-text">
+            We work with children, families, and local communities to strengthen
+            educational access through practical support, trust, and consistent presence.
+          </p>
+        </div>
+        <div class="footer-links-group">
+          <div class="footer-heading">Explore</div>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#about">About</a>
+            <a href="#mission">Mission</a>
+            <a href="team.html">Team</a>
+            <a href="#programs">Programs</a>
+            <a href="donate.html">Donate</a>
+            <a href="updates.html">Updates</a>
+            <a href="media.html">Media</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </nav>
+        </div>
+        <div class="footer-connect">
+          <div class="footer-heading">Connect</div>
+          <div class="footer-contact" id="footerContact"></div>
+          <div class="footer-socials" id="footerSocials"></div>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <div class="footer-note">Currently rooted in Uttarakhand, with a long-term vision to grow impact responsibly.</div>
+        <div>© <span id="year"></span> Mirai Society. All rights reserved.</div>
       </div>
     </div>
   </footer>
