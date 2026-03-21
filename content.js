@@ -24,30 +24,30 @@ const siteContent = {
   about: {
     title: "About Mirai Society",
     description:
-      "Mirai Society is an NGO focused on supporting children in rural areas through education, awareness, and community-driven initiatives."
+      "Mirai Society is a Uttarakhand, India–based NGO committed to supporting children in rural communities through education, awareness, and community-driven initiatives. We strive to improve access to learning, encourage school participation, and work closely with families and local communities to create lasting impact. Our mission is to empower children with knowledge, confidence, and opportunity so they can build a brighter future for themselves and their communities."
   },
 
   mission: {
     title: "Our Mission",
     description:
-      "To support children in rural areas with better access to education, learning materials, encouragement, and opportunity."
+      "Our mission is to bring hope and opportunity to children in rural areas by supporting their education and personal growth. We believe that every child deserves a chance to dream, and we work closely with communities to turn those dreams into reality."
   },
 
   programs: [
     {
       title: "Education Support",
       description:
-        "Providing learning materials, school support, and educational encouragement for children in underserved communities."
+        "Providing essential learning materials, academic support, and encouragement to help children in underserved communities access quality education and stay motivated in their learning journey."
     },
     {
       title: "Community Outreach",
       description:
-        "Working with parents, teachers, and local communities to improve learning access and long-term support."
+        "Collaborating with parents, teachers, and local communities to raise awareness, improve access to education, and build a strong support system for children’s long-term growth."
     },
     {
       title: "Child Development",
       description:
-        "Creating safe and meaningful opportunities for children to build confidence, skills, and hope for the future."
+        "Creating safe, nurturing environments where children can build confidence, develop life skills, and grow into capable individuals with hope for a better future."
     }
   ],
 
