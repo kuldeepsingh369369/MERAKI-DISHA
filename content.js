@@ -6,6 +6,21 @@ const siteContent = {
     image: "images/hero.jpg"
   },
 
+  stats: [
+    {
+      value: "250+",
+      label: "Children supported"
+    },
+    {
+      value: "18",
+      label: "Village activities"
+    },
+    {
+      value: "100%",
+      label: "Community focused"
+    }
+  ],
+
   about: {
     title: "About Mirai Society",
     description:
@@ -36,6 +51,21 @@ const siteContent = {
     }
   ],
 
+  updates: [
+    {
+      title: "School Kit Distribution",
+      description:
+        "We distributed notebooks, pencils, and school supplies to children in the village.",
+      image: "images/update-1.jpg"
+    },
+    {
+      title: "Community Learning Session",
+      description:
+        "Volunteers conducted a group learning and reading activity for local children.",
+      image: "images/update-2.jpg"
+    }
+  ],
+
   gallery: [
     "images/gallery-1.jpg",
     "images/gallery-2.jpg",
@@ -51,8 +81,8 @@ const siteContent = {
   ],
 
   contact: {
-    email: "miraisocietyuttarakhand@gmail.com",
-    instagram: "https://www.instagram.com/miraisociety_",
+    email: "hello@miraisociety.org",
+    instagram: "https://instagram.com/yourpage",
     youtube: "https://youtube.com/@yourchannel"
   }
 };
