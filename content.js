@@ -51,8 +51,8 @@ const siteContent = {
   ],
 
   contact: {
-    email: "hello@miraisociety.org",
-    instagram: "https://instagram.com/yourpage",
+    email: "miraisocietyuttarakhand@gmail.com",
+    instagram: "https://www.instagram.com/miraisociety_",
     youtube: "https://youtube.com/@yourchannel"
   }
 };
