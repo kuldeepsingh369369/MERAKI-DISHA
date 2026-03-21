@@ -63,13 +63,20 @@ const siteContent = {
       description:
         "Volunteers conducted a group learning and reading activity for local children.",
       image: "images/update-2.jpg"
+    },
+    {
+      title: "Parents Awareness Meeting",
+      description:
+        "We met with families and local community members to discuss the importance of education and regular school participation.",
+      image: "images/update-3.jpg"
     }
   ],
 
   gallery: [
     "images/gallery-1.jpg",
     "images/gallery-2.jpg",
-    "images/gallery-3.jpg"
+    "images/gallery-3.jpg",
+    "images/gallery-4.jpg"
   ],
 
   videos: [
