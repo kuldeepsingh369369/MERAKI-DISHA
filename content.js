@@ -454,6 +454,55 @@ const siteContent = {
     }
   ],
 
+  schoolPartnership: {
+    title: "Mirai Learning Center",
+    subtitle: "Bridging the gap between school enrollment and real learning",
+    description:
+      "Many children across India remain enrolled in school but cannot attend regularly — due to distance, family responsibilities, economic pressures, or other barriers. Mirai Learning Center gives these children a place to learn every day, while keeping them connected to their school for exams and official progress.",
+    how: [
+      {
+        step: "1",
+        title: "School registers students",
+        description:
+          "Partner schools identify students who are enrolled but unable to attend regularly and register them with Mirai Learning Center."
+      },
+      {
+        step: "2",
+        title: "Students learn at the center",
+        description:
+          "Registered students attend Mirai Learning Center for their daily education — taught by our team of teachers and volunteers."
+      },
+      {
+        step: "3",
+        title: "Exams at school",
+        description:
+          "Students appear for their exams at their registered school, maintaining official enrollment and earning their qualifications."
+      }
+    ],
+    programStats: [
+      { value: "3", label: "Programs currently running" },
+      { value: "3", label: "Programs completed last year" },
+      { value: "Soon", label: "More programs launching" }
+    ],
+    whyItMatters: [
+      {
+        title: "Children stay officially enrolled",
+        description:
+          "Students keep their school enrollment intact, sit for exams, and earn qualifications — without losing their right to formal education."
+      },
+      {
+        title: "Learning happens every day",
+        description:
+          "Instead of falling behind, children continue their education at the center with structured, teacher-led daily sessions."
+      },
+      {
+        title: "Schools reach more students",
+        description:
+          "Partner schools can support children they would otherwise lose to dropout, strengthening community-wide educational outcomes."
+      }
+    ]
+  },
+
   volunteer: {
     title: "Join Mirai Society",
     description:

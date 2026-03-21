@@ -351,13 +351,13 @@ h1 {
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.82);
-  border-color: var(--border);
-  color: var(--text);
+  background: linear-gradient(135deg, var(--primary), #23915d);
+  border-color: transparent;
+  color: white;
 }
 
 .btn-secondary:hover {
-  background: #f2f6f1;
+  background: linear-gradient(135deg, var(--primary-dark), #1d744b);
   transform: translateY(-1px);
 }
 
@@ -947,6 +947,12 @@ h1 {
 
 .donation-contact .btn {
   margin-top: 14px;
+}
+
+.donation-contact .highlight-chip {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: white;
 }
 
 .current-needs-shell {
@@ -2290,6 +2296,134 @@ footer {
 
   .newsletter-input-row .btn {
     width: 100%;
+  }
+}
+
+/* ── Mission page ── */
+.mission-how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.mission-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 14px;
+  align-items: start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.mission-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mission-step-body h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.mission-step-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.mission-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.mission-stat {
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.mission-stat-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.mission-stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.school-form-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.school-form-copy {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.school-form-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+}
+
+.school-form-panel h3 {
+  margin-bottom: 0;
+}
+
+.school-form-panel p {
+  margin-bottom: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .mission-how-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .school-form-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .mission-stats-row {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -57,12 +57,12 @@
       </button>
       <nav class="nav-links" id="navLinks">
         <a href="index.html#about">About</a>
-        <a href="index.html#mission">Mission</a>
-        <a href="team.html">Team</a>
-        <a href="index.html#programs">Programs</a>
-        <a href="donate.html">Donate</a>
-        <a href="volunteer.html">Volunteer</a>
-        <a href="updates.html">Updates</a>
+        <a href="mission.html">Our Mission</a>
+        <a href="team.html">Our Team</a>
+        <a href="index.html#programs">What We Do</a>
+        <a href="donate.html">♥ Donate</a>
+        <a href="volunteer.html">Join Us</a>
+        <a href="updates.html">Field Updates</a>
         <a href="media.html">Media</a>
       </nav>
     </div>
@@ -240,14 +240,15 @@
           <div class="footer-heading">Explore</div>
           <nav class="footer-links" aria-label="Footer navigation">
             <a href="index.html#about">About</a>
-            <a href="index.html#mission">Mission</a>
-            <a href="team.html">Team</a>
-            <a href="index.html#programs">Programs</a>
-            <a href="donate.html">Donate</a>
-            <a href="volunteer.html">Volunteer</a>
-            <a href="updates.html">Updates</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="team.html">Our Team</a>
+            <a href="index.html#programs">What We Do</a>
+            <a href="donate.html">♥ Donate</a>
+            <a href="volunteer.html">Join Us</a>
+            <a href="updates.html">Field Updates</a>
             <a href="media.html">Media</a>
             <a href="privacy.html">Privacy Policy</a>
+            <a href="mission.html#school-register">Register Your School</a>
             <a href="#" class="js-open-newsletter-bar">Newsletter</a>
           </nav>
         </div>
@@ -307,7 +308,7 @@
               <article class="team-card">
                 <img class="team-image" src="${escapeHTML(member.image || '')}" alt="${escapeHTML(member.name)}" loading="lazy" decoding="async" />
                 <div class="team-body">
-                  <span class="team-category">Volunteer</span>
+                  <span class="team-category">Join Us</span>
                   <h3>${escapeHTML(member.name)}</h3>
                   <p>${escapeHTML(member.bio || '')}</p>
                 </div>
@@ -319,44 +320,8 @@
       container.querySelectorAll("img").forEach(img => bindImageFallback(img, ".team-card"));
     }
 
-    function handleStaticForm(formId, submitBtnId, successId, errorId) {
-      const form = document.getElementById(formId);
-      if (!form) return;
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const btn = document.getElementById(submitBtnId);
-        const successEl = document.getElementById(successId);
-        const errorEl = document.getElementById(errorId);
-        btn.disabled = true;
-        btn.textContent = "Sending…";
-        successEl.style.display = "none";
-        errorEl.style.display = "none";
-        try {
-          const res = await fetch("https://api.staticforms.xyz/submit", {
-            method: "POST",
-            body: new FormData(form),
-          });
-          const json = await res.json();
-          if (json.success) {
-            form.reset();
-            successEl.style.display = "block";
-            btn.style.display = "none";
-          } else {
-            errorEl.style.display = "block";
-            btn.disabled = false;
-            btn.textContent = "Send Interest";
-          }
-        } catch {
-          errorEl.style.display = "block";
-          btn.disabled = false;
-          btn.textContent = "Send Interest";
-        }
-      });
-    }
-
     renderVolunteerWays();
     renderVolunteersGrid();
-    handleStaticForm("volunteerForm", "volunteerSubmit", "volunteerSuccess", "volunteerError");
   </script>
   <script src="newsletter-bar.js"></script>
 </body>
