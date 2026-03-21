@@ -4,493 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mirai Society</title>
-  <meta name="description" content="Mirai Society helps children in rural areas access better education and opportunity." />
-  <style>
-    :root {
-      --bg: #f7faf8;
-      --surface: #ffffff;
-      --surface-2: #eef6f1;
-      --text: #173227;
-      --muted: #5f756b;
-      --primary: #1f7a4f;
-      --primary-dark: #155c3a;
-      --border: #d9e7df;
-      --shadow: 0 10px 30px rgba(23, 50, 39, 0.08);
-      --radius: 20px;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(247, 250, 248, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(217, 231, 223, 0.8);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0.2px;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #2da86b, #145c39);
-      color: white;
-      box-shadow: var(--shadow);
-      font-size: 18px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      color: var(--muted);
-      font-weight: 600;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a:hover { color: var(--primary); }
-
-    .hero {
-      padding: 64px 0 34px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-card, .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 34px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      padding: 8px 14px;
-      color: var(--primary-dark);
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1, h2, h3, h4, p { margin-top: 0; }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.05;
-      margin-bottom: 18px;
-      letter-spacing: -0.03em;
-    }
-
-    .hero-text {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 60ch;
-      margin-bottom: 22px;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 26px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover { background: var(--primary-dark); }
-
-    .btn-secondary {
-      background: var(--surface-2);
-      border-color: var(--border);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover { background: #e6f1eb; }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .stat {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.6rem;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .hero-media {
-      overflow: hidden;
-      position: relative;
-      min-height: 480px;
-    }
-
-    .hero-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .media-badge {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
-      max-width: 280px;
-    }
-
-    .section {
-      padding: 34px 0;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      max-width: 62ch;
-      margin-bottom: 0;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .card { padding: 24px; }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--primary-dark);
-    }
-
-    .updates-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .update-card {
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-    }
-
-    .update-thumb {
-      aspect-ratio: 16/10;
-      overflow: hidden;
-      background: #dfeae4;
-    }
-
-    .update-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .update-body {
-      padding: 18px;
-    }
-
-    .date {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      padding: 6px 10px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-
-    .update-body p {
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .media-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: auto;
-    }
-
-    .media-link {
-      font-weight: 700;
-      color: var(--primary);
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .gallery-grid img {
-      border-radius: 18px;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .cta-banner {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 20px;
-      align-items: center;
-      padding: 28px;
-      background: linear-gradient(135deg, #184f35, #236c49);
-      color: white;
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-banner p { color: rgba(255,255,255,0.82); }
-
-    .cta-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .cta-actions .btn-primary {
-      background: white;
-      color: var(--primary-dark);
-    }
-
-    .cta-actions .btn-secondary {
-      background: rgba(255,255,255,0.08);
-      color: white;
-      border-color: rgba(255,255,255,0.18);
-    }
-
-    footer {
-      padding: 30px 0 42px;
-      color: var(--muted);
-    }
-
-    .footer-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      border-top: 1px solid var(--border);
-      padding-top: 22px;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(12, 20, 16, 0.72);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      z-index: 100;
-    }
-
-    .modal.active { display: flex; }
-
-    .modal-card {
-      width: min(920px, 100%);
-      max-height: 90vh;
-      overflow: auto;
-      background: white;
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-    }
-
-    .modal-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .close-btn {
-      border: 1px solid var(--border);
-      background: var(--surface-2);
-      border-radius: 12px;
-      min-width: 42px;
-      height: 42px;
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    .modal-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 20px;
-    }
-
-    .modal-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .modal-gallery img {
-      border-radius: 16px;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border: 1px solid var(--border);
-    }
-
-    .video-wrap iframe {
-      width: 100%;
-      min-height: 240px;
-      border: 0;
-      border-radius: 18px;
-    }
-
-    .empty-note {
-      padding: 18px;
-      text-align: center;
-      color: var(--muted);
-      border: 1px dashed var(--border);
-      border-radius: 16px;
-      background: var(--surface);
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about-grid,
-      .cta-banner,
-      .modal-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .updates-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-      .cta-actions { justify-content: flex-start; }
-      .hero-media { min-height: 320px; }
-    }
-
-    @media (max-width: 640px) {
-      .hero { padding-top: 36px; }
-      .hero-card, .card { padding: 20px; }
-      .stats,
-      .updates-grid,
-      .gallery-grid,
-      .modal-gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .nav { align-items: flex-start; }
-      .nav-links { font-size: 14px; gap: 12px; }
-      .modal-card { padding: 18px; }
-    }
-  </style>
+  <meta
+    name="description"
+    content="Mirai Society helps children in rural areas access better education and opportunity."
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
@@ -499,7 +17,7 @@
         <div class="brand-mark">M</div>
         <div>
           <div>Mirai Society</div>
-          <small style="color: var(--muted); font-weight: 600;">Education for rural children</small>
+          <small class="brand-subtitle">Education for rural children</small>
         </div>
       </a>
       <nav class="nav-links">
@@ -518,7 +36,9 @@
           <div class="eyebrow">🌱 Building brighter futures</div>
           <h1>Helping rural children learn, grow, and dream bigger.</h1>
           <p class="hero-text">
-            Mirai Society is dedicated to improving educational access for children in rural communities through local support, learning resources, and community-driven action.
+            Mirai Society is dedicated to improving educational access for children
+            in rural communities through local support, learning resources, and
+            community-driven action.
           </p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#updates">See Daily Updates</a>
@@ -541,10 +61,15 @@
         </div>
 
         <div class="hero-card hero-media">
-          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80" alt="Children learning together" />
+          <img
+            src="images/hero.jpg"
+            alt="Children learning together"
+          />
           <div class="media-badge">
             <strong>Daily moments. Real impact.</strong>
-            <div style="color: var(--muted); margin-top: 6px;">Share photos, video links, and stories from every day of field work.</div>
+            <div class="media-badge-text">
+              Share photos, video links, and stories from every day of field work.
+            </div>
           </div>
         </div>
       </div>
@@ -555,7 +80,10 @@
         <div class="section-head">
           <div>
             <h2>About Mirai Society</h2>
-            <p>A simple, trust-building website to tell your story, publish regular updates, and show transparent grassroots work.</p>
+            <p>
+              A simple, trust-building website to tell your story, publish regular
+              updates, and show transparent grassroots work.
+            </p>
           </div>
         </div>
 
@@ -563,7 +91,8 @@
           <div class="card">
             <h3>Our Mission</h3>
             <p>
-              To support children in rural areas with better access to education, learning materials, encouragement, and opportunity.
+              To support children in rural areas with better access to education,
+              learning materials, encouragement, and opportunity.
             </p>
             <div class="pill-list">
               <span class="pill">Education Access</span>
@@ -575,9 +104,11 @@
           <div class="card">
             <h3>How this site works</h3>
             <p>
-              This template is static and GitHub Pages friendly. You can update daily photos, descriptions, and YouTube video links by editing a single JavaScript data list.
+              This template is static and GitHub Pages friendly. You can update
+              daily photos, descriptions, and YouTube video links by editing a
+              single JavaScript data file.
             </p>
-            <p style="margin-bottom: 0; color: var(--muted);">
+            <p class="muted no-margin">
               No backend needed. Just update content and push to GitHub.
             </p>
           </div>
@@ -590,7 +121,10 @@
         <div class="section-head">
           <div>
             <h2>Daily Updates</h2>
-            <p>Each card can include a title, date, short story, photos, and an optional video link.</p>
+            <p>
+              Each card can include a title, date, short story, photos, and an
+              optional video link.
+            </p>
           </div>
         </div>
         <div class="updates-grid" id="updatesGrid"></div>
@@ -613,14 +147,22 @@
       <div class="container">
         <div class="cta-banner">
           <div>
-            <h2 style="margin-bottom: 8px;">Support the mission</h2>
-            <p style="margin-bottom: 0;">
-              Add your donation page, volunteer form, WhatsApp number, or email here to help more children access education.
+            <h2 class="banner-title">Support the mission</h2>
+            <p class="banner-text">
+              Add your donation page, volunteer form, WhatsApp number, or email here
+              to help more children access education.
             </p>
           </div>
           <div class="cta-actions">
             <a class="btn btn-primary" href="mailto:hello@miraisociety.org">Email Us</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+            <a
+              class="btn btn-secondary"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </div>
@@ -644,8 +186,8 @@
       <div class="modal-top">
         <div>
           <div class="date" id="modalDate"></div>
-          <h3 id="modalTitle" style="margin-bottom: 8px;"></h3>
-          <p id="modalDescription" style="color: var(--muted); margin-bottom: 0;"></p>
+          <h3 id="modalTitle" class="modal-title"></h3>
+          <p id="modalDescription" class="muted no-margin"></p>
         </div>
         <button class="close-btn" id="closeModal" aria-label="Close">×</button>
       </div>
@@ -662,147 +204,7 @@
     </div>
   </div>
 
-  <script>
-    const updates = [
-      {
-        date: '2026-03-20',
-        title: 'School Supplies Distribution',
-        description: 'We distributed notebooks, pencils, and learning kits to children in a rural village and spent time encouraging them to continue school with confidence.',
-        coverImage: 'https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80',
-        images: [
-          'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80',
-          'https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=900&q=80',
-          'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80'
-        ],
-        video: 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
-      },
-      {
-        date: '2026-03-18',
-        title: 'Community Reading Circle',
-        description: 'Our volunteers hosted a reading circle where children practiced reading aloud, storytelling, and group learning activities together.',
-        coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
-        images: [
-          'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=80',
-          'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=900&q=80'
-        ],
-        video: 'https://www.youtube.com/watch?v=ysz5S6PUM-U'
-      },
-      {
-        date: '2026-03-15',
-        title: 'Parents and Teachers Meeting',
-        description: 'We met with families and teachers to discuss attendance, school readiness, and how local support can help children stay on track.',
-        coverImage: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80',
-        images: [
-          'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=900&q=80',
-          'https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=80'
-        ],
-        video: ''
-      }
-    ];
-
-    const updatesGrid = document.getElementById('updatesGrid');
-    const galleryGrid = document.getElementById('galleryGrid');
-    const postModal = document.getElementById('postModal');
-    const closeModal = document.getElementById('closeModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDate = document.getElementById('modalDate');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalGallery = document.getElementById('modalGallery');
-    const modalVideo = document.getElementById('modalVideo');
-
-    function youtubeEmbed(url) {
-      if (!url) return '';
-      try {
-        const parsed = new URL(url);
-        if (parsed.hostname.includes('youtu.be')) {
-          return `https://www.youtube.com/embed/${parsed.pathname.replace('/', '')}`;
-        }
-        const v = parsed.searchParams.get('v');
-        return v ? `https://www.youtube.com/embed/${v}` : url;
-      } catch {
-        return url;
-      }
-    }
-
-    function renderUpdates() {
-      if (!updates.length) {
-        updatesGrid.innerHTML = '<div class="empty-note">No updates yet. Add your first daily story in the updates array.</div>';
-        return;
-      }
-
-      updatesGrid.innerHTML = updates.map((post, index) => `
-        <article class="card update-card">
-          <div class="update-thumb">
-            <img src="${post.coverImage || post.images?.[0] || ''}" alt="${post.title}" />
-          </div>
-          <div class="update-body">
-            <div class="date">${post.date}</div>
-            <h3>${post.title}</h3>
-            <p>${post.description}</p>
-            <div class="media-row">
-              <a class="media-link" href="#" data-index="${index}">View details</a>
-            </div>
-          </div>
-        </article>
-      `).join('');
-
-      document.querySelectorAll('[data-index]').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          openModal(Number(link.dataset.index));
-        });
-      });
-    }
-
-    function renderGallery() {
-      const allImages = updates.flatMap(post => post.images || []);
-      if (!allImages.length) {
-        galleryGrid.innerHTML = '<div class="empty-note">Gallery will appear automatically when you add images.</div>';
-        return;
-      }
-
-      galleryGrid.innerHTML = allImages.map((img, index) => `
-        <img src="${img}" alt="Mirai Society gallery image ${index + 1}" loading="lazy" />
-      `).join('');
-    }
-
-    function openModal(index) {
-      const post = updates[index];
-      if (!post) return;
-
-      modalTitle.textContent = post.title;
-      modalDate.textContent = post.date;
-      modalDescription.textContent = post.description;
-      modalGallery.innerHTML = (post.images || []).length
-        ? post.images.map(img => `<img src="${img}" alt="${post.title}" />`).join('')
-        : '<div class="empty-note">No photos added for this update yet.</div>';
-
-      modalVideo.innerHTML = post.video
-        ? `<iframe src="${youtubeEmbed(post.video)}" title="${post.title} video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
-        : '<div class="empty-note">No video link for this update.</div>';
-
-      postModal.classList.add('active');
-      postModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModalFn() {
-      postModal.classList.remove('active');
-      postModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    closeModal.addEventListener('click', closeModalFn);
-    postModal.addEventListener('click', (e) => {
-      if (e.target === postModal) closeModalFn();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModalFn();
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-    renderUpdates();
-    renderGallery();
-  </script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
