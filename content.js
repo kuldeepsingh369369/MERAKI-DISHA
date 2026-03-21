@@ -3,7 +3,7 @@ const siteContent = {
     title: "Helping rural children learn, grow, and dream bigger.",
     subtitle:
       "Mirai Society is dedicated to improving educational access for children in rural communities through local support, learning resources, and community-driven action.",
-    image: "images/hero.jpg"
+    image: "images/hero.jpeg"
   },
 
   stats: [
