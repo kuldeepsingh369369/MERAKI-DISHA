@@ -33,22 +33,56 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "NGO",
-    "name": "Mirai Society",
-    "url": "https://www.miraisociety.org",
-    "logo": "https://www.miraisociety.org/images/logo.jpg",
-    "description": "A youth-led nonprofit building a national education movement across India — starting from Uttarakhand, supporting children through direct field work with students, families, and schools.",
-    "foundingDate": "2025",
-    "areaServed": "India",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-9761191140",
-      "email": "miraisocietyuttarakhand@gmail.com",
-      "contactType": "General"
-    },
-    "sameAs": [
-      "https://www.instagram.com/miraisociety_",
-      "https://www.facebook.com/share/18QomgV2py/"
+    "@graph": [
+      {
+        "@type": "NGO",
+        "@id": "https://www.miraisociety.org/#organization",
+        "name": "Mirai Society",
+        "url": "https://www.miraisociety.org/",
+        "logo": "https://www.miraisociety.org/images/logo.jpg",
+        "description": "A youth-led nonprofit building a national education movement across India, starting from Uttarakhand and supporting children through direct field work with students, families, and schools.",
+        "foundingDate": "2025",
+        "areaServed": "India",
+        "email": "miraisocietyuttarakhand@gmail.com",
+        "telephone": "+91-9761191140",
+        "sameAs": [
+          "https://www.instagram.com/miraisociety_",
+          "https://www.facebook.com/share/18QomgV2py/"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "general inquiries",
+            "telephone": "+91-9761191140",
+            "email": "miraisocietyuttarakhand@gmail.com",
+            "availableLanguage": ["en", "hi"]
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.miraisociety.org/#website",
+        "url": "https://www.miraisociety.org/",
+        "name": "Mirai Society",
+        "publisher": {
+          "@id": "https://www.miraisociety.org/#organization"
+        },
+        "inLanguage": ["en", "hi"]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.miraisociety.org/#webpage",
+        "url": "https://www.miraisociety.org/",
+        "name": "Mirai Society | Youth-Led Education NGO across India",
+        "description": "Mirai Society is a youth-led NGO building a national education movement from Uttarakhand across India through direct field work with children, families, and schools.",
+        "isPartOf": {
+          "@id": "https://www.miraisociety.org/#website"
+        },
+        "about": {
+          "@id": "https://www.miraisociety.org/#organization"
+        },
+        "inLanguage": "en"
+      }
     ]
   }
   </script>
@@ -99,8 +133,8 @@
       <div class="container hero-grid">
         <div class="hero-card">
           <div class="eyebrow">Community-led education support</div>
-          <h1 id="heroTitle"></h1>
-          <p class="hero-text" id="heroSubtitle"></p>
+          <h1 id="heroTitle">A youth-led NGO helping children stay connected to education through direct work with students, families, and schools.</h1>
+          <p class="hero-text" id="heroSubtitle">Mirai Society is a youth-led NGO building a national education movement — starting from the ground in Uttarakhand, and growing across India with a model rooted in direct field work, community trust, and consistent presence.</p>
 
           <div class="cta-row">
             <a class="btn btn-primary" href="donate.html">Support the Work</a>
@@ -109,7 +143,7 @@
         </div>
 
         <div class="hero-card hero-media">
-          <img id="heroImage" src="" alt="Mirai Society hero" fetchpriority="high" />
+          <img id="heroImage" src="images/hero.jpeg" alt="Mirai Society — youth-led education NGO field work with children in Uttarakhand" fetchpriority="high" />
           <div class="media-badge">
             <strong>Energetic action. Trusted presence.</strong>
             <div class="media-badge-text">
@@ -125,11 +159,15 @@
         <div class="section-head">
           <div>
             <span class="section-kicker">Who we are</span>
-            <h2 id="aboutTitle"></h2>
-            <p id="aboutDescription"></p>
+            <h2 id="aboutTitle">Energetic, local, and trusted educational support</h2>
+            <p id="aboutDescription">Mirai Society is a youth-led nonprofit built by teachers and young professionals who work directly with children, parents, schools, and communities. We focus on practical support that families can see, trust, and benefit from in everyday learning.</p>
           </div>
         </div>
-        <div class="stats stats-section" id="statsGrid"></div>
+        <div class="stats stats-section" id="statsGrid">
+          <div class="stat"><strong>250+</strong><span>Children reached</span></div>
+          <div class="stat"><strong>18</strong><span>Field activities completed</span></div>
+          <div class="stat"><strong>Daily</strong><span>On-ground engagement</span></div>
+        </div>
       </div>
     </section>
 
@@ -138,9 +176,13 @@
         <div class="about-grid">
           <div class="card">
             <span class="section-kicker">Why we exist</span>
-            <h3 id="missionTitle"></h3>
-            <p id="missionDescription"></p>
-            <div class="highlight-list" id="missionHighlights"></div>
+            <h3 id="missionTitle">Our mission</h3>
+            <p id="missionDescription">We help children continue learning with dignity, confidence, and continuity by staying close to families, schools, and communities.</p>
+            <div class="highlight-list" id="missionHighlights">
+              <span class="highlight-chip">Remove everyday learning barriers</span>
+              <span class="highlight-chip">Keep children connected to school</span>
+              <span class="highlight-chip">Build a model that can grow responsibly</span>
+            </div>
             <div class="cta-row" style="margin-top:1.5rem;">
               <a class="btn btn-primary" href="mission.html">Explore Our Mission</a>
             </div>
@@ -171,11 +213,15 @@
         <div class="section-head">
           <div>
             <span class="section-kicker">Why we are different</span>
-            <h2 id="differenceTitle"></h2>
-            <p id="differenceDescription"></p>
+            <h2 id="differenceTitle">Why Mirai Society feels different</h2>
+            <p id="differenceDescription">We are not built as a distant campaign. We stay close to the everyday realities shaping a child's education.</p>
           </div>
         </div>
-        <div class="programs-grid difference-grid" id="differenceGrid"></div>
+        <div class="programs-grid difference-grid" id="differenceGrid">
+          <article class="program-card"><h3>Youth-led energy</h3><p>Young people driving steady work, not one-time activity.</p></article>
+          <article class="program-card"><h3>Teachers at the core</h3><p>Educators keep the work grounded in real learning needs.</p></article>
+          <article class="program-card"><h3>Practical problem-solving</h3><p>Teachers and professionals help keep community work reliable and practical.</p></article>
+        </div>
       </div>
     </section>
 
@@ -190,7 +236,11 @@
             </p>
           </div>
         </div>
-        <div class="programs-grid" id="programsGrid"></div>
+        <div class="programs-grid" id="programsGrid">
+          <article class="program-card"><h3>Learning Support</h3><p>We provide school supplies, learning materials, and on-ground encouragement so children have the tools and motivation they need to continue learning.</p></article>
+          <article class="program-card"><h3>Family and Community Outreach</h3><p>We engage parents, teachers, and community members in conversations about school participation, educational continuity, and how local support can change outcomes for children.</p></article>
+          <article class="program-card"><h3>Confidence and Child Development</h3><p>Through safe group activities and child-centered support, we help children build confidence, communication skills, and a stronger sense of possibility for their future.</p></article>
+        </div>
       </div>
     </section>
 
@@ -199,11 +249,15 @@
         <div class="section-head">
           <div>
             <span class="section-kicker">The real gap</span>
-            <h2 id="barriersTitle"></h2>
-            <p id="barriersDescription"></p>
+            <h2 id="barriersTitle">What many children are missing</h2>
+            <p id="barriersDescription">The gap is not only about school admission. Many children also lack the materials, exposure, guidance, and digital access that help them stay connected to learning and understand the wider world.</p>
           </div>
         </div>
-        <div class="programs-grid barriers-grid" id="barriersGrid"></div>
+        <div class="programs-grid barriers-grid" id="barriersGrid">
+          <article class="program-card"><h3>Interrupted learning basics</h3><p>Children may not have regular access to notebooks, books, structured study support, or encouragement at the moment they need it most.</p></article>
+          <article class="program-card"><h3>Little digital exposure</h3><p>Many children still grow up with limited access to computers, digital learning tools, or basic awareness of how technology shapes education and careers.</p></article>
+          <article class="program-card"><h3>Low awareness of opportunity</h3><p>Without guidance, mentoring, and exposure, children can struggle to imagine careers, higher education paths, or the possibilities beyond their immediate surroundings.</p></article>
+        </div>
       </div>
     </section>
 
@@ -212,11 +266,16 @@
         <div class="future-shell">
           <div class="future-copy">
             <span class="section-kicker section-kicker-light">Future readiness</span>
-            <h2 id="futureTitle"></h2>
-            <p id="futureDescription"></p>
-            <p class="future-note" id="futureNote"></p>
+            <h2 id="futureTitle">Beyond access: preparing children for the world ahead</h2>
+            <p id="futureDescription">Mirai Society wants children not only to stay in school, but to grow with confidence, curiosity, and awareness of the changing world around them.</p>
+            <p class="future-note" id="futureNote">This is the larger shift we want to build: from limited access to future readiness.</p>
           </div>
-          <div class="future-points" id="futurePoints"></div>
+          <div class="future-points" id="futurePoints">
+            <div class="future-point"><span class="future-point-mark">+</span>Exposure to computers and digital learning</div>
+            <div class="future-point"><span class="future-point-mark">+</span>Stronger confidence, communication, and participation</div>
+            <div class="future-point"><span class="future-point-mark">+</span>Awareness of careers, higher education, and life possibilities</div>
+            <div class="future-point"><span class="future-point-mark">+</span>Community support that helps children keep moving forward</div>
+          </div>
         </div>
       </div>
     </section>
@@ -226,11 +285,15 @@
         <div class="story-shell">
           <div class="story-card">
             <span class="section-kicker">Impact story</span>
-            <h2 id="storyTitle"></h2>
+            <h2 id="storyTitle">Sometimes the first change is simply a child starting to participate again</h2>
             <div class="story-meta" id="storyMeta"></div>
-            <blockquote class="story-quote" id="storyQuote"></blockquote>
-            <p id="storyDescription"></p>
-            <div class="highlight-list story-highlights" id="storyHighlights"></div>
+            <blockquote class="story-quote" id="storyQuote">In one of our early 2026 field sessions, a child who had been sitting quietly at the edge of the group began answering questions, joining reading activities, and staying engaged once regular encouragement and basic learning materials were in place.</blockquote>
+            <p id="storyDescription">This is the kind of change we see on the ground. The child's marks did not transform overnight, but participation did. With notebooks, volunteer attention, and a space where the child felt noticed, confidence started returning first and regular learning became easier to rebuild from there.</p>
+            <div class="highlight-list story-highlights" id="storyHighlights">
+              <span class="highlight-chip">Participation increased during the session</span>
+              <span class="highlight-chip">Basic materials helped remove immediate friction</span>
+              <span class="highlight-chip">Confidence returned before academic results changed</span>
+            </div>
             <p class="story-attribution" id="storyAttribution"></p>
           </div>
         </div>
@@ -255,9 +318,13 @@
         <div class="support-shell">
           <div class="support-copy">
             <span class="section-kicker">Support</span>
-            <h2 id="supportTitle"></h2>
-            <p id="supportDescription"></p>
-            <div class="highlight-list support-highlights" id="supportHighlights"></div>
+            <h2 id="supportTitle">Support Mirai Society</h2>
+            <p id="supportDescription">Support Mirai Society through practical educational help that reaches children, families, and schools directly. It helps us respond faster with materials, field visits, and community-led learning support.</p>
+            <div class="highlight-list support-highlights" id="supportHighlights">
+              <span class="highlight-chip">Practical support with visible local impact</span>
+              <span class="highlight-chip">Help that reaches children, families, and schools</span>
+              <span class="highlight-chip">Ways to give, volunteer, or partner</span>
+            </div>
             <div class="support-quick-actions">
               <a class="btn btn-primary" href="donate.html">Donate or Sponsor</a>
               <a class="btn btn-secondary" href="team.html">See the Team Behind the Work</a>
