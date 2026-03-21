@@ -1,12 +1,15 @@
-const updatesGrid = document.getElementById("updatesGrid");
-const galleryGrid = document.getElementById("galleryGrid");
-const postModal = document.getElementById("postModal");
-const closeModal = document.getElementById("closeModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDate = document.getElementById("modalDate");
-const modalDescription = document.getElementById("modalDescription");
-const modalGallery = document.getElementById("modalGallery");
-const modalVideo = document.getElementById("modalVideo");
+function setText(id, value) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = value || "";
+}
+
+function setImage(id, src, alt = "") {
+  const el = document.getElementById(id);
+  if (el && src) {
+    el.src = src;
+    el.alt = alt;
+  }
+}
 
 function youtubeEmbed(url) {
   if (!url) return "";
@@ -19,57 +22,60 @@ function youtubeEmbed(url) {
     }
 
     const videoId = parsed.searchParams.get("v");
-    return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
-  } catch (error) {
+    if (videoId) {
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+
     return url;
+  } catch {
+    return "";
   }
 }
 
-function renderUpdates() {
-  if (!updates.length) {
-    updatesGrid.innerHTML =
-      '<div class="empty-note">No updates yet. Add your first daily story in data.js.</div>';
+function renderHero() {
+  setText("heroTitle", siteContent.hero.title);
+  setText("heroSubtitle", siteContent.hero.subtitle);
+  setImage("heroImage", siteContent.hero.image, siteContent.hero.title);
+}
+
+function renderAbout() {
+  setText("aboutTitle", siteContent.about.title);
+  setText("aboutDescription", siteContent.about.description);
+  setText("missionTitle", siteContent.mission.title);
+  setText("missionDescription", siteContent.mission.description);
+}
+
+function renderPrograms() {
+  const container = document.getElementById("programsGrid");
+  const programs = siteContent.programs || [];
+
+  if (!programs.length) {
+    container.innerHTML = '<div class="empty-note">No programs added yet.</div>';
     return;
   }
 
-  updatesGrid.innerHTML = updates
+  container.innerHTML = programs
     .map(
-      (post, index) => `
-        <article class="card update-card">
-          <div class="update-thumb">
-            <img src="${post.coverImage || post.images?.[0] || ""}" alt="${post.title}" />
-          </div>
-          <div class="update-body">
-            <div class="date">${post.date}</div>
-            <h3>${post.title}</h3>
-            <p>${post.description}</p>
-            <div class="media-row">
-              <a class="media-link" href="#" data-index="${index}">View details</a>
-            </div>
-          </div>
+      (item) => `
+        <article class="program-card">
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
         </article>
       `
     )
     .join("");
-
-  document.querySelectorAll("[data-index]").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-      openModal(Number(link.dataset.index));
-    });
-  });
 }
 
 function renderGallery() {
-  const allImages = updates.flatMap((post) => post.images || []);
+  const container = document.getElementById("galleryGrid");
+  const gallery = siteContent.gallery || [];
 
-  if (!allImages.length) {
-    galleryGrid.innerHTML =
-      '<div class="empty-note">Gallery will appear automatically when you add images.</div>';
+  if (!gallery.length) {
+    container.innerHTML = '<div class="empty-note">No gallery images added yet.</div>';
     return;
   }
 
-  galleryGrid.innerHTML = allImages
+  container.innerHTML = gallery
     .map(
       (img, index) =>
         `<img src="${img}" alt="Mirai Society gallery image ${index + 1}" loading="lazy" />`
@@ -77,53 +83,94 @@ function renderGallery() {
     .join("");
 }
 
-function openModal(index) {
-  const post = updates[index];
-  if (!post) return;
+function renderVideos() {
+  const container = document.getElementById("videosGrid");
+  const videos = siteContent.videos || [];
 
-  modalTitle.textContent = post.title;
-  modalDate.textContent = post.date;
-  modalDescription.textContent = post.description;
+  if (!videos.length) {
+    container.innerHTML = '<div class="empty-note">No videos added yet.</div>';
+    return;
+  }
 
-  modalGallery.innerHTML = (post.images || []).length
-    ? post.images.map((img) => `<img src="${img}" alt="${post.title}" />`).join("")
-    : '<div class="empty-note">No photos added for this update yet.</div>';
+  container.innerHTML = videos
+    .map((video) => {
+      const embedUrl = youtubeEmbed(video.url);
 
-  modalVideo.innerHTML = post.video
-    ? `<iframe
-         src="${youtubeEmbed(post.video)}"
-         title="${post.title} video"
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-         allowfullscreen
-       ></iframe>`
-    : '<div class="empty-note">No video link for this update.</div>';
-
-  postModal.classList.add("active");
-  postModal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
+      return `
+        <article class="video-card">
+          <div class="video-frame">
+            <iframe
+              src="${embedUrl}"
+              title="${video.title}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="video-body">
+            <h3>${video.title}</h3>
+            <p>${video.description || ""}</p>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
 }
 
-function closeModalFn() {
-  postModal.classList.remove("active");
-  postModal.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+function renderContact() {
+  const container = document.getElementById("contactActions");
+  const contact = siteContent.contact || {};
+  const actions = [];
+
+  if (contact.email) {
+    actions.push(
+      `<a class="btn btn-primary" href="mailto:${contact.email}">Email Us</a>`
+    );
+  }
+
+  if (contact.instagram) {
+    actions.push(
+      `<a class="btn btn-secondary" href="${contact.instagram}" target="_blank" rel="noreferrer">Instagram</a>`
+    );
+  }
+
+  if (contact.youtube) {
+    actions.push(
+      `<a class="btn btn-secondary" href="${contact.youtube}" target="_blank" rel="noreferrer">YouTube</a>`
+    );
+  }
+
+  container.innerHTML = actions.join("");
 }
 
-closeModal.addEventListener("click", closeModalFn);
+function initMenu() {
+  const toggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("navLinks");
 
-postModal.addEventListener("click", (event) => {
-  if (event.target === postModal) {
-    closeModalFn();
-  }
-});
+  if (!toggle || !nav) return;
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeModalFn();
-  }
-});
+  toggle.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
-renderUpdates();
-renderGallery();
+function init() {
+  renderHero();
+  renderAbout();
+  renderPrograms();
+  renderGallery();
+  renderVideos();
+  renderContact();
+  initMenu();
+  document.getElementById("year").textContent = new Date().getFullYear();
+}
+
+init();
