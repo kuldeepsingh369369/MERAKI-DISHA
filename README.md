@@ -1,98 +1,168 @@
-# 🌱 Mirai Society Website
+# Mirai Society Website
 
-This is the official static website for **Mirai Society**, an NGO dedicated to supporting education for children in rural communities.
+Official static website for **Mirai Society**, a youth-led NGO working on children’s education through direct support with students, families, schools, and communities.
 
-The website is built using **pure HTML, CSS, and JavaScript** and is hosted on **GitHub Pages**.
+The site is built with plain **HTML, CSS, and vanilla JavaScript** and is designed to stay easy to update without a build system.
 
----
+## Live Website
 
-## 🚀 Live Website
+- `https://www.miraisociety.org`
 
-👉 https://www.miraisociety.org
+## Project Structure
 
----
-
-## 📁 Project Structure
-
+```text
+MERAKI-DISHA-main/
+├── index.html      # Homepage
+├── team.html       # Full team page
+├── donate.html     # Donation / support page
+├── updates.html    # Year-wise updates archive
+├── media.html      # Gallery + videos archive
+├── privacy.html    # Privacy policy
+├── content.js      # Main editable content source
+├── app.js          # Shared render logic
+├── style.css       # Shared styles
+├── images/         # Site images
+└── CNAME           # GitHub Pages custom domain
 ```
-mirai-society/
-├── index.html        # Main website structure
-├── style.css         # Styling and layout
-├── content.js        # All editable content (IMPORTANT)
-├── app.js            # Rendering logic
-└── images/           # All images used in the site
-```
 
----
+## How The Site Works
 
-## ✨ How It Works
+- `content.js` contains the main editable content in a global `siteContent` object.
+- `app.js` reads that content and renders:
+  - homepage sections
+  - team page content
+  - updates archive
+  - media archive
+  - shared contact/footer content
+- `style.css` is the only stylesheet used across the site.
 
-This website is designed to be **easy to update without coding knowledge**.
+There is no framework, no package manager, and no build step.
 
-👉 All content is controlled from a single file:
+## Main Pages
 
-```
+- `index.html`
+  - homepage
+  - shows latest 3 updates
+  - shows media previews only
+- `team.html`
+  - full team and volunteer listing
+- `donate.html`
+  - support-focused donation page
+  - includes practical support messaging, current needs, FAQ, and donation methods placeholder
+- `updates.html`
+  - full updates archive
+  - grouped year-wise
+- `media.html`
+  - full gallery and video archive
+- `privacy.html`
+  - privacy policy page
+
+## What To Update Most Often
+
+The main file for weekly updates is:
+
+```text
 content.js
 ```
 
-You can update:
+Most commonly updated sections:
 
-* Hero text
-* About section
-* Mission
-* Programs
-* Gallery images
-* Video links
-* Contact details
+- `updates`
+- `gallery`
+- `videos`
+- `stats`
+- `currentNeeds`
 
----
+## Content Model Overview
 
-## 📝 How to Update Content
+Key content areas inside `content.js`:
 
-### 1. Update Text
+- `hero`
+- `stats`
+- `about`
+- `mission`
+- `difference`
+- `proof`
+- `team`
+- `programs`
+- `barriers`
+- `futureReadiness`
+- `impactStory`
+- `currentNeeds`
+- `support`
+- `updates`
+- `gallery`
+- `videos`
+- `contact`
 
-Edit `content.js`:
+## Updating Content
 
-```javascript
-about: {
-  title: "About Mirai Society",
-  description: "Updated description here..."
+### Update Hero Text
+
+```js
+hero: {
+  title: "Updated title here",
+  subtitle: "Updated subtitle here",
+  image: "images/hero.jpeg"
 }
 ```
 
----
+### Update Current Needs
 
-### 2. Add New Program
+```js
+currentNeeds: {
+  title: "What is most useful right now",
+  description: "Short explanation here",
+  items: [
+    "Children's books and reading material",
+    "Notebooks, pens, pencils, and stationery"
+  ]
+}
+```
 
-```javascript
-programs: [
+### Add A New Update
+
+```js
+updates: [
   {
-    title: "New Program",
-    description: "Details about the program"
+    title: "School Support Drive",
+    date: "April 2026",
+    location: "Uttarakhand",
+    description: "Short update summary here.",
+    image: "images/update-4.jpg",
+    alt: "Children receiving educational support"
   }
 ]
 ```
 
----
+Notes:
 
-### 3. Add Gallery Images
+- homepage shows latest 3 updates automatically
+- `updates.html` shows the full archive automatically
+- updates are grouped year-wise based on the `date`
 
-1. Upload images to `/images/`
-2. Add paths in `content.js`:
+### Add Gallery Images
 
-```javascript
+Use object entries, not plain strings:
+
+```js
 gallery: [
-  "images/gallery-1.jpg",
-  "images/gallery-2.jpg",
-  "images/new-image.jpg"
+  {
+    image: "images/gallery-5.jpg",
+    alt: "Children in a learning activity",
+    caption: "Short caption here"
+  }
 ]
 ```
 
----
+Notes:
 
-### 4. Add Video
+- homepage shows preview media only
+- `media.html` shows the full gallery automatically
 
-```javascript
+### Add Videos
+
+```js
 videos: [
   {
     title: "Field Visit",
@@ -102,96 +172,100 @@ videos: [
 ]
 ```
 
----
+Notes:
 
-### 5. Update Contact Info
+- homepage shows preview videos only
+- `media.html` shows the full video list automatically
 
-```javascript
-contact: {
-  email: "hello@miraisociety.org",
-  instagram: "https://instagram.com/yourpage",
-  youtube: "https://youtube.com/@yourchannel"
+### Update Team Members
+
+Edit the `team.members` array in `content.js`:
+
+```js
+{
+  name: "Example Name",
+  role: "Example Role",
+  bio: "Short bio here.",
+  image: "images/example.jpg",
+  category: "Management"
 }
 ```
 
----
+### Update Contact Details
 
-## 📸 Image Guidelines
+```js
+contact: {
+  email: "miraisocietyuttarakhand@gmail.com",
+  mobile: "+91-9761191140",
+  mobileSecondary: "+91-9760115189",
+  whatsapp: "https://wa.me/919761191140",
+  instagram: "https://www.instagram.com/miraisociety_",
+  facebook: "https://www.facebook.com/share/18QomgV2py/"
+}
+```
 
-* Use simple names:
+These render automatically into the top bar and footer.
 
-  ```
-  good:  gallery-1.jpg
-  bad:   My Photo 1.jpg
-  ```
-* Keep images optimized (recommended < 500KB)
-* Use `.jpg` or `.webp` for better performance
+## Local Preview
 
----
+Run a simple static server from the project root:
 
-## 🌍 Deployment (GitHub Pages)
+```bash
+python3 -m http.server 8000
+```
 
-1. Push code to GitHub repository
-2. Go to:
+Then open:
 
-   ```
-   Settings → Pages
-   ```
-3. Select branch:
+```text
+http://localhost:8000/
+```
 
-   ```
-   main / root
-   ```
-4. Add custom domain:
+## Verification
 
-   ```
-   miraisociety.org
-   ```
+After JavaScript edits, run:
 
----
+```bash
+node --check app.js
+```
 
-## 🔄 Updating the Website
+## Image Guidelines
 
-Whenever you make changes:
+- Keep filenames clean and predictable
+- Prefer lowercase and hyphens:
+
+```text
+good: team-kuldeep.jpg
+bad: My Photo 1.jpg
+```
+
+- Prefer optimized image sizes for faster loading
+- Use meaningful `alt` text for gallery and update images
+- Use respectful, consent-safe photos when showing real children
+
+## Deployment
+
+This site is set up for GitHub Pages.
+
+Typical flow:
 
 ```bash
 git add .
-git commit -m "Update content"
+git commit -m "Update website content"
 git push
 ```
 
-GitHub Pages will automatically update the website.
+## Recommended Next Improvements
 
----
+- Add live UPI / QR / bank details when merchant setup is ready
+- Add NGO registration / compliance trust information if available
+- Keep updates dated and specific
+- Add more real impact stories over time
+- Keep the privacy policy updated if data collection or payment flows increase
 
-## 💡 Future Improvements
+## Contact
 
-* Add donation integration
-* Add volunteer form
-* Add CMS (Netlify CMS / Sanity)
-* Add blog or impact stories
-* Add multilingual support
+- Email: `miraisocietyuttarakhand@gmail.com`
 
----
+## License
 
-## ❤️ About Mirai Society
-
-Mirai Society is committed to improving access to education for children in rural areas through community-driven initiatives, learning support, and outreach programs.
-
----
-
-## 🤝 Contributing
-
-If you want to contribute or collaborate, feel free to reach out:
-
-📧 [miraisocietyuttarakhand@gmail.com](mailto:miraisocietyuttarakhand@gmail.com)
-
----
-
-## 📜 License
-
-This project is open for educational and nonprofit use.
-
----
-
-**Built with ❤️ for impact.**
+Intended for Mirai Society website use and related nonprofit work.
