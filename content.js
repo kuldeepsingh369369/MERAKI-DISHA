@@ -220,7 +220,7 @@ const siteContent = {
   },
 
   impactStory: {
-    title: "A child’s confidence can change before the marks do",
+    title: "Sometimes the first change is simply a child starting to participate again",
     quote:
       "In one of our early 2026 field sessions, a child who had been sitting quietly at the edge of the group began answering questions, joining reading activities, and staying engaged once regular encouragement and basic learning materials were in place.",
     description:
