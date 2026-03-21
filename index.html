@@ -6,25 +6,33 @@
   <title>Mirai Society</title>
   <meta
     name="description"
-    content="Mirai Society helps children in rural areas access better education and opportunity."
+    content="Mirai Society is an NGO helping children in rural areas through education, outreach, and community support."
   />
+  <meta name="theme-color" content="#1f7a4f" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="container nav">
-      <a class="brand" href="#home">
+      <a class="brand" href="#home" aria-label="Mirai Society home">
         <div class="brand-mark">M</div>
         <div>
-          <div>Mirai Society</div>
+          <div class="brand-title">Mirai Society</div>
           <small class="brand-subtitle">Education for rural children</small>
         </div>
       </a>
-      <nav class="nav-links">
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
-        <a href="#updates">Daily Updates</a>
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
         <a href="#gallery">Gallery</a>
-        <a href="#support">Support</a>
+        <a href="#videos">Videos</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -34,41 +42,20 @@
       <div class="container hero-grid">
         <div class="hero-card">
           <div class="eyebrow">🌱 Building brighter futures</div>
-          <h1>Helping rural children learn, grow, and dream bigger.</h1>
-          <p class="hero-text">
-            Mirai Society is dedicated to improving educational access for children
-            in rural communities through local support, learning resources, and
-            community-driven action.
-          </p>
+          <h1 id="heroTitle"></h1>
+          <p class="hero-text" id="heroSubtitle"></p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#updates">See Daily Updates</a>
-            <a class="btn btn-secondary" href="#support">Volunteer / Support</a>
-          </div>
-          <div class="stats">
-            <div class="stat">
-              <strong>250+</strong>
-              <span>Children supported</span>
-            </div>
-            <div class="stat">
-              <strong>18</strong>
-              <span>Village activities</span>
-            </div>
-            <div class="stat">
-              <strong>100%</strong>
-              <span>Community focused</span>
-            </div>
+            <a class="btn btn-primary" href="#programs">Our Work</a>
+            <a class="btn btn-secondary" href="#contact">Get in Touch</a>
           </div>
         </div>
 
         <div class="hero-card hero-media">
-          <img
-            src="images/hero.jpg"
-            alt="Children learning together"
-          />
+          <img id="heroImage" src="" alt="Mirai Society hero" />
           <div class="media-badge">
-            <strong>Daily moments. Real impact.</strong>
+            <strong>Education. Hope. Opportunity.</strong>
             <div class="media-badge-text">
-              Share photos, video links, and stories from every day of field work.
+              Supporting rural children through learning and community action.
             </div>
           </div>
         </div>
@@ -79,55 +66,47 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>About Mirai Society</h2>
-            <p>
-              A simple, trust-building website to tell your story, publish regular
-              updates, and show transparent grassroots work.
-            </p>
+            <h2 id="aboutTitle"></h2>
+            <p id="aboutDescription"></p>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section class="section" id="mission">
+      <div class="container">
         <div class="about-grid">
           <div class="card">
-            <h3>Our Mission</h3>
-            <p>
-              To support children in rural areas with better access to education,
-              learning materials, encouragement, and opportunity.
-            </p>
-            <div class="pill-list">
-              <span class="pill">Education Access</span>
-              <span class="pill">Rural Outreach</span>
-              <span class="pill">Community Support</span>
-              <span class="pill">Child Development</span>
-            </div>
+            <h3 id="missionTitle"></h3>
+            <p id="missionDescription"></p>
           </div>
+
           <div class="card">
-            <h3>How this site works</h3>
+            <h3>What this website is for</h3>
             <p>
-              This template is static and GitHub Pages friendly. You can update
-              daily photos, descriptions, and YouTube video links by editing a
-              single JavaScript data file.
+              This is a lightweight, static website for Mirai Society. You can update
+              your text, images, videos, and contact details whenever needed by editing
+              one simple file.
             </p>
             <p class="muted no-margin">
-              No backend needed. Just update content and push to GitHub.
+              No backend required. Just update content and push to GitHub.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="updates">
+    <section class="section" id="programs">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Daily Updates</h2>
+            <h2>Our Programs</h2>
             <p>
-              Each card can include a title, date, short story, photos, and an
-              optional video link.
+              Highlight the key ways Mirai Society supports children and communities.
             </p>
           </div>
         </div>
-        <div class="updates-grid" id="updatesGrid"></div>
+        <div class="programs-grid" id="programsGrid"></div>
       </div>
     </section>
 
@@ -135,35 +114,40 @@
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Photo Gallery</h2>
-            <p>A quick visual wall built automatically from your update entries.</p>
+            <h2>Gallery</h2>
+            <p>
+              A visual look at the work, people, and communities behind Mirai Society.
+            </p>
           </div>
         </div>
         <div class="gallery-grid" id="galleryGrid"></div>
       </div>
     </section>
 
-    <section class="section" id="support">
+    <section class="section" id="videos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Videos</h2>
+            <p>
+              Share field visits, community stories, and awareness videos through YouTube links.
+            </p>
+          </div>
+        </div>
+        <div class="videos-grid" id="videosGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
       <div class="container">
         <div class="cta-banner">
           <div>
             <h2 class="banner-title">Support the mission</h2>
             <p class="banner-text">
-              Add your donation page, volunteer form, WhatsApp number, or email here
-              to help more children access education.
+              Reach out to collaborate, volunteer, support, or learn more about Mirai Society.
             </p>
           </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="mailto:hello@miraisociety.org">Email Us</a>
-            <a
-              class="btn btn-secondary"
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>
-          </div>
+          <div class="cta-actions" id="contactActions"></div>
         </div>
       </div>
     </section>
@@ -173,7 +157,7 @@
     <div class="container footer-grid">
       <div>
         <strong>Mirai Society</strong><br />
-        Helping rural children through education and community support.
+        Helping children in rural areas through education and community support.
       </div>
       <div>
         © <span id="year"></span> Mirai Society. All rights reserved.
@@ -181,30 +165,7 @@
     </div>
   </footer>
 
-  <div class="modal" id="postModal" aria-hidden="true">
-    <div class="modal-card">
-      <div class="modal-top">
-        <div>
-          <div class="date" id="modalDate"></div>
-          <h3 id="modalTitle" class="modal-title"></h3>
-          <p id="modalDescription" class="muted no-margin"></p>
-        </div>
-        <button class="close-btn" id="closeModal" aria-label="Close">×</button>
-      </div>
-      <div class="modal-grid">
-        <div>
-          <h4>Photos</h4>
-          <div class="modal-gallery" id="modalGallery"></div>
-        </div>
-        <div>
-          <h4>Video</h4>
-          <div class="video-wrap" id="modalVideo"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="data.js"></script>
+  <script src="content.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
