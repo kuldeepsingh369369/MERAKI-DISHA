@@ -857,6 +857,98 @@ function initMenu() {
   });
 }
 
+function renderTrust() {
+  const trust = siteContent.trust || {};
+  const regEl = document.getElementById("trustRegistration");
+  const regNoteEl = document.getElementById("trustRegNote");
+  const taxEl = document.getElementById("trust80G");
+  const fundEl = document.getElementById("trustFundGrid");
+
+  if (regEl) regEl.textContent = trust.registration || "";
+  if (regNoteEl) regNoteEl.textContent = trust.regNote || "";
+  if (taxEl) taxEl.textContent = trust.section80G || "";
+
+  if (fundEl) {
+    const items = trust.fundUsage || [];
+    fundEl.innerHTML = items
+      .map(
+        (item) => `
+        <div class="fund-item">
+          <div class="fund-bar-wrap">
+            <div class="fund-bar" style="width:${escapeHTML(String(item.percent))}%"></div>
+          </div>
+          <div class="fund-label">
+            <strong>${escapeHTML(item.label)} <span class="fund-percent">${escapeHTML(String(item.percent))}%</span></strong>
+            <span>${escapeHTML(item.description)}</span>
+          </div>
+        </div>
+      `
+      )
+      .join("");
+  }
+}
+
+function renderImpactStories() {
+  const container = document.getElementById("impactStoriesGrid");
+  const stories = siteContent.impactStories || [];
+
+  if (!container || !stories.length) return;
+
+  container.innerHTML = stories
+    .map(
+      (story) => `
+      <article class="story-card story-card-alt">
+        <span class="section-kicker">${escapeHTML(story.date || "")}${story.location ? " · " + escapeHTML(story.location) : ""}</span>
+        <h3>${escapeHTML(story.title)}</h3>
+        <blockquote class="story-quote story-quote-sm">${escapeHTML(story.quote)}</blockquote>
+        <p>${escapeHTML(story.description)}</p>
+        <div class="highlight-list">
+          ${(story.highlights || []).map((h) => `<span class="highlight-chip">${escapeHTML(h)}</span>`).join("")}
+        </div>
+        <p class="story-attribution">${escapeHTML(story.attribution || "")}</p>
+      </article>
+    `
+    )
+    .join("");
+}
+
+function renderVolunteer() {
+  const titleEl = document.getElementById("volunteerTitle");
+  const descEl = document.getElementById("volunteerDescription");
+  const waysEl = document.getElementById("volunteerWays");
+  const volunteer = siteContent.volunteer || {};
+
+  if (titleEl) titleEl.textContent = volunteer.title || "";
+  if (descEl) descEl.textContent = volunteer.description || "";
+
+  if (waysEl) {
+    const ways = volunteer.ways || [];
+    waysEl.innerHTML = ways
+      .map(
+        (item) => `
+        <div class="volunteer-way">
+          <strong>${escapeHTML(item.title)}</strong>
+          <span>${escapeHTML(item.description)}</span>
+        </div>
+      `
+      )
+      .join("");
+  }
+}
+
+function initWhatsAppFloat() {
+  const btn = document.getElementById("whatsappFloat");
+  if (!btn) return;
+
+  const url = siteContent.contact?.whatsapp || "";
+  if (!url) {
+    btn.style.display = "none";
+    return;
+  }
+
+  btn.href = url;
+}
+
 function init() {
   renderHero();
   renderStats();
@@ -868,13 +960,17 @@ function init() {
   renderBarriers();
   renderFutureReadiness();
   renderImpactStory();
+  renderImpactStories();
   renderSupport();
   renderUpdates();
   renderGallery();
   renderVideos();
   renderContact();
+  renderTrust();
+  renderVolunteer();
   initMenu();
   initLightbox();
+  initWhatsAppFloat();
   document.getElementById("year").textContent = new Date().getFullYear();
 }
 

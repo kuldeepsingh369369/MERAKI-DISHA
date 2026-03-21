@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support Mirai Society</title>
+  <title>Support Mirai Society | Donate or Volunteer | Education NGO across India</title>
   <meta
     name="description"
     content="Support Mirai Society with books, stationery, educational materials, sponsorship, or donations that help children stay connected to learning."
   />
   <meta name="theme-color" content="#1f7a4f" />
-  <meta property="og:title" content="Support Mirai Society" />
+  <meta name="keywords" content="donate education NGO India, support children education India, volunteer NGO India, Mirai Society donation, education support NGO" />
+  <meta property="og:url" content="https://www.miraisociety.org/donate.html" />
+  <meta property="og:title" content="Support Mirai Society | Donate or Volunteer" />
   <meta
     property="og:description"
     content="Support Mirai Society with books, stationery, educational materials, sponsorship, or donations that help children stay connected to learning."
@@ -60,6 +62,7 @@
         <a href="team.html">Team</a>
         <a href="index.html#programs">Programs</a>
         <a href="donate.html">Donate</a>
+            <a href="volunteer.html">Volunteer</a>
         <a href="updates.html">Updates</a>
         <a href="media.html">Media</a>
         <a href="privacy.html">Privacy</a>
@@ -327,6 +330,31 @@
       </div>
     </section>
 
+    <section class="section" id="trust-donate">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Transparency</span>
+            <h2>Where your support goes</h2>
+            <p>We want every supporter to have a clear picture of how contributions are used and what our legal standing is.</p>
+          </div>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-fund-block">
+            <h3>How support is used</h3>
+            <div class="fund-usage-grid" id="trustFundGrid"></div>
+          </div>
+          <div class="trust-info-block">
+            <h3>Our registration</h3>
+            <p id="trustRegistration"></p>
+            <p class="trust-note" id="trustRegNote"></p>
+            <h3 class="trust-tax-head">Tax exemption (80G / 12A)</h3>
+            <p id="trust80G"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="donation-transparency">
       <div class="container">
         <div class="story-shell">
@@ -380,8 +408,8 @@
             <p>Books, notebooks, pens, pencils, stationery, classroom tools, and educational materials that children and teachers can use directly are most helpful.</p>
           </details>
           <details class="faq-item">
-            <summary>Can I support from outside Uttarakhand?</summary>
-            <p>Yes. You can support Mirai Society from anywhere by contributing materials, sponsorship, partnerships, or future digital donation options.</p>
+            <summary>Can I support from outside the current field area?</summary>
+            <p>Yes. You can support Mirai Society from anywhere in India or abroad by contributing materials, sponsorship, partnerships, or financial support. Our work is based in Uttarakhand today and expanding across India.</p>
           </details>
           <details class="faq-item">
             <summary>Can schools, businesses, or groups contribute together?</summary>
@@ -433,9 +461,11 @@
             <a href="index.html#mission">Mission</a>
             <a href="team.html">Team</a>
             <a href="donate.html">Donate</a>
+            <a href="volunteer.html">Volunteer</a>
             <a href="updates.html">Updates</a>
             <a href="media.html">Media</a>
             <a href="privacy.html">Privacy Policy</a>
+            <a href="#" class="js-open-newsletter-bar">Newsletter</a>
           </nav>
         </div>
         <div class="footer-connect">
@@ -445,13 +475,29 @@
         </div>
       </div>
       <div class="footer-meta">
-        <div class="footer-note">Currently rooted in Uttarakhand, with a long-term vision to grow impact responsibly.</div>
+        <div class="footer-note">Started in Uttarakhand, building a national education mission across India.</div>
         <div>© <span id="year"></span> Mirai Society. All rights reserved.</div>
       </div>
     </div>
   </footer>
 
+  <a
+    id="whatsappFloat"
+    class="whatsapp-float"
+    href="#"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Chat with Mirai Society on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4.2a7.6 7.6 0 0 0-6.5 11.5L4.3 20l4.4-1.2A7.6 7.6 0 1 0 12 4.2z"/>
+      <path d="M9.2 8.6c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.6.1-.9.5s-1.1 1.1-1.1 2.7 1.2 3.1 1.4 3.3c.2.2 2.2 3.5 5.4 4.7 2.6 1 3.1.8 3.7.7.6-.1 1.8-.8 2-1.5.3-.7.3-1.3.2-1.5-.1-.2-.4-.3-.9-.6l-1.5-.8c-.2-.1-.4-.2-.6.2s-.7.8-.9 1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.7-.9-.8-1.5-1.9-1.7-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6z" fill="currentColor" stroke="none"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
   <script src="content.js"></script>
   <script src="app.js"></script>
+  <script src="newsletter-bar.js"></script>
 </body>
 </html>

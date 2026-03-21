@@ -3,27 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mirai Society</title>
+  <title>Mirai Society | Youth-Led Education NGO across India</title>
   <meta
     name="description"
-    content="Mirai Society is a youth-led nonprofit supporting children through direct educational work with students, families, and schools."
+    content="Mirai Society is a youth-led NGO building a national education movement — starting from Uttarakhand and growing across India through direct field work with children, families, and schools."
   />
+  <meta name="keywords" content="education NGO India, NGO Uttarakhand, children education support India, youth-led nonprofit India, Mirai Society, donate education India, national education NGO" />
   <meta name="theme-color" content="#1f7a4f" />
-  <meta property="og:title" content="Mirai Society" />
+  <meta property="og:title" content="Mirai Society | Youth-Led Education NGO across India" />
   <meta
     property="og:description"
-    content="A youth-led nonprofit supporting children through practical educational work with students, families, and schools."
+    content="A youth-led NGO building a national education movement — starting from Uttarakhand and growing across India through direct field work with children, families, and schools."
   />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/hero.jpeg" />
+  <meta property="og:url" content="https://www.miraisociety.org/" />
+  <meta property="og:image" content="https://www.miraisociety.org/images/hero.jpeg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mirai Society" />
+  <meta name="twitter:title" content="Mirai Society | Youth-Led Education NGO across India" />
   <meta
     name="twitter:description"
-    content="A youth-led nonprofit supporting children through practical educational work with students, families, and schools."
+    content="A youth-led NGO building a national education movement — starting from Uttarakhand and growing across India through direct field work with children, families, and schools."
   />
-  <meta name="twitter:image" content="images/hero.jpeg" />
+  <meta name="twitter:image" content="https://www.miraisociety.org/images/hero.jpeg" />
+  <link rel="canonical" href="https://www.miraisociety.org/" />
   <link rel="icon" href="images/logo.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NGO",
+    "name": "Mirai Society",
+    "url": "https://www.miraisociety.org",
+    "logo": "https://www.miraisociety.org/images/logo.jpg",
+    "description": "A youth-led nonprofit building a national education movement across India — starting from Uttarakhand, supporting children through direct field work with students, families, and schools.",
+    "foundingDate": "2025",
+    "areaServed": "India",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9761191140",
+      "email": "miraisocietyuttarakhand@gmail.com",
+      "contactType": "General"
+    },
+    "sameAs": [
+      "https://www.instagram.com/miraisociety_",
+      "https://www.facebook.com/share/18QomgV2py/"
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -59,6 +84,7 @@
         <a href="team.html">Team</a>
         <a href="#programs">Programs</a>
         <a href="donate.html">Donate</a>
+        <a href="volunteer.html">Volunteer</a>
         <a href="updates.html">Updates</a>
         <a href="media.html">Media</a>
       </nav>
@@ -203,6 +229,44 @@
       </div>
     </section>
 
+    <section class="section" id="trust">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">Transparency</span>
+            <h2>How we use support — and why you can trust us</h2>
+            <p>We believe donors deserve clarity. Here is how contributions are used and what our legal standing is.</p>
+          </div>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-fund-block">
+            <h3>How your support is used</h3>
+            <div class="fund-usage-grid" id="trustFundGrid"></div>
+          </div>
+          <div class="trust-info-block">
+            <h3>Our registration</h3>
+            <p id="trustRegistration"></p>
+            <p class="trust-note" id="trustRegNote"></p>
+            <h3 class="trust-tax-head">Tax exemption (80G / 12A)</h3>
+            <p id="trust80G"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="more-stories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">More from the field</span>
+            <h2>Stories of change from the ground</h2>
+            <p>Each story reflects the kind of consistent, community-rooted work that drives real educational progress.</p>
+          </div>
+        </div>
+        <div class="impact-stories-grid" id="impactStoriesGrid"></div>
+      </div>
+    </section>
+
     <section class="section" id="support">
       <div class="container">
         <div class="support-shell">
@@ -304,6 +368,26 @@
       </div>
     </section>
 
+    <section class="section" id="volunteer">
+      <div class="container">
+        <div class="team-preview">
+          <div class="team-preview-copy">
+            <span class="section-kicker">Get involved</span>
+            <h2>Join the Mirai Society community</h2>
+            <p>Whether you can give a few hours a month or want to be part of our regular field team — teach, mentor, contribute your skills, or support local outreach. There is a meaningful role for you here.</p>
+            <div class="highlight-list" style="margin-top:8px;">
+              <span class="highlight-chip">Teach or mentor</span>
+              <span class="highlight-chip">Professional skills</span>
+              <span class="highlight-chip">Local outreach</span>
+            </div>
+          </div>
+          <div class="team-preview-actions">
+            <a class="btn btn-primary" href="volunteer.html">See Volunteer Opportunities</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -340,9 +424,11 @@
             <a href="team.html">Team</a>
             <a href="#programs">Programs</a>
             <a href="donate.html">Donate</a>
+            <a href="volunteer.html">Volunteer</a>
             <a href="updates.html">Updates</a>
             <a href="media.html">Media</a>
             <a href="privacy.html">Privacy Policy</a>
+            <a href="#" class="js-open-newsletter-bar">Newsletter</a>
           </nav>
         </div>
         <div class="footer-connect">
@@ -352,13 +438,70 @@
         </div>
       </div>
       <div class="footer-meta">
-        <div class="footer-note">Currently rooted in Uttarakhand, with a long-term vision to grow impact responsibly.</div>
+        <div class="footer-note">Registered Society · India · Started in Uttarakhand, building a national education mission across India.</div>
         <div>© <span id="year"></span> Mirai Society. All rights reserved.</div>
       </div>
     </div>
   </footer>
 
+  <a
+    id="whatsappFloat"
+    class="whatsapp-float"
+    href="#"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="Chat with Mirai Society on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4.2a7.6 7.6 0 0 0-6.5 11.5L4.3 20l4.4-1.2A7.6 7.6 0 1 0 12 4.2z"/>
+      <path d="M9.2 8.6c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.6.1-.9.5s-1.1 1.1-1.1 2.7 1.2 3.1 1.4 3.3c.2.2 2.2 3.5 5.4 4.7 2.6 1 3.1.8 3.7.7.6-.1 1.8-.8 2-1.5.3-.7.3-1.3.2-1.5-.1-.2-.4-.3-.9-.6l-1.5-.8c-.2-.1-.4-.2-.6.2s-.7.8-.9 1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.5-1.7-.9-.8-1.5-1.9-1.7-2.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6z" fill="currentColor" stroke="none"/>
+    </svg>
+    <span>WhatsApp</span>
+  </a>
+
   <script src="content.js"></script>
   <script src="app.js"></script>
+  <script>
+    function handleStaticForm(formId, submitBtnId, successId, errorId) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const btn = document.getElementById(submitBtnId);
+        const successEl = document.getElementById(successId);
+        const errorEl = document.getElementById(errorId);
+
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+        successEl.style.display = "none";
+        errorEl.style.display = "none";
+
+        try {
+          const res = await fetch("https://api.staticforms.xyz/submit", {
+            method: "POST",
+            body: new FormData(form),
+          });
+          const json = await res.json();
+
+          if (json.success) {
+            form.reset();
+            successEl.style.display = "block";
+            btn.style.display = "none";
+          } else {
+            errorEl.style.display = "block";
+            btn.disabled = false;
+            btn.textContent = btn.id === "volunteerSubmit" ? "Send Interest" : "Subscribe";
+          }
+        } catch {
+          errorEl.style.display = "block";
+          btn.disabled = false;
+          btn.textContent = btn.id === "volunteerSubmit" ? "Send Interest" : "Subscribe";
+        }
+      });
+    }
+
+  </script>
+  <script src="newsletter-bar.js"></script>
 </body>
 </html>
