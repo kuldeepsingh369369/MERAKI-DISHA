@@ -27,7 +27,7 @@ MERAKI-DISHA-main/
 
 ## How The Site Works
 
-- `content.js` contains the main editable content in a global `siteContent` object.
+- `content.js` contains the main editable content in a global `siteContent` object
 - `app.js` reads that content and renders:
   - homepage sections
   - team page content
