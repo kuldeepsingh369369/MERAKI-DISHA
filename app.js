@@ -38,6 +38,29 @@ function renderHero() {
   setImage("heroImage", siteContent.hero.image, siteContent.hero.title);
 }
 
+function renderStats() {
+  const container = document.getElementById("statsGrid");
+  const stats = siteContent.stats || [];
+
+  if (!container) return;
+
+  if (!stats.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = stats
+    .map(
+      (item) => `
+        <div class="stat">
+          <strong>${item.value}</strong>
+          <span>${item.label}</span>
+        </div>
+      `
+    )
+    .join("");
+}
+
 function renderAbout() {
   setText("aboutTitle", siteContent.about.title);
   setText("aboutDescription", siteContent.about.description);
@@ -48,6 +71,8 @@ function renderAbout() {
 function renderPrograms() {
   const container = document.getElementById("programsGrid");
   const programs = siteContent.programs || [];
+
+  if (!container) return;
 
   if (!programs.length) {
     container.innerHTML = '<div class="empty-note">No programs added yet.</div>';
@@ -66,9 +91,37 @@ function renderPrograms() {
     .join("");
 }
 
+function renderUpdates() {
+  const container = document.getElementById("updatesGrid");
+  const updates = siteContent.updates || [];
+
+  if (!container) return;
+
+  if (!updates.length) {
+    container.innerHTML = '<div class="empty-note">No updates added yet.</div>';
+    return;
+  }
+
+  container.innerHTML = updates
+    .map(
+      (item) => `
+        <article class="update-card">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" />
+          <div class="update-body">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderGallery() {
   const container = document.getElementById("galleryGrid");
   const gallery = siteContent.gallery || [];
+
+  if (!container) return;
 
   if (!gallery.length) {
     container.innerHTML = '<div class="empty-note">No gallery images added yet.</div>';
@@ -86,6 +139,8 @@ function renderGallery() {
 function renderVideos() {
   const container = document.getElementById("videosGrid");
   const videos = siteContent.videos || [];
+
+  if (!container) return;
 
   if (!videos.length) {
     container.innerHTML = '<div class="empty-note">No videos added yet.</div>';
@@ -164,8 +219,10 @@ function initMenu() {
 
 function init() {
   renderHero();
+  renderStats();
   renderAbout();
   renderPrograms();
+  renderUpdates();
   renderGallery();
   renderVideos();
   renderContact();
