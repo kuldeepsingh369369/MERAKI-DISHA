@@ -222,16 +222,16 @@ const siteContent = {
   impactStory: {
     title: "A child’s confidence can change before the marks do",
     quote:
-      "When children receive notebooks, encouragement, and a learning space where they are noticed, they begin showing up differently. They participate more, ask more, and start believing they belong in school.",
+      "In one of our early 2026 field sessions, a child who had been sitting quietly at the edge of the group began answering questions, joining reading activities, and staying engaged once regular encouragement and basic learning materials were in place.",
     description:
-      "One of the clearest patterns in our field work is that small, timely support can shift a child’s confidence very quickly. A notebook, a shared reading session, or encouragement from volunteers does not solve everything, but it can reopen participation, curiosity, and regular engagement with learning.",
-    attribution: "Mirai Society field observation",
-    date: "March 2026",
+      "This is the kind of change we see on the ground. The child’s marks did not transform overnight, but participation did. With notebooks, volunteer attention, and a space where the child felt noticed, confidence started returning first and regular learning became easier to rebuild from there.",
+    attribution: "Mirai Society field team reflection",
+    date: "February 2026",
     location: "Uttarakhand",
     highlights: [
-      "250+ children reached",
-      "18 field activities completed",
-      "Daily on-ground engagement"
+      "Participation increased during the session",
+      "Basic materials helped remove immediate friction",
+      "Confidence returned before academic results changed"
     ]
   },
 
@@ -250,41 +250,55 @@ const siteContent = {
   support: {
     title: "Support Mirai Society",
     description:
-      "Your support goes directly into practical educational work on the ground. It helps us respond quickly to what children, families, and schools actually need, from learning materials to field outreach and community sessions.",
+      "Support Mirai Society through practical educational help that reaches children, families, and schools directly. It helps us respond faster with materials, field visits, and community-led learning support.",
+    highlights: [
+      "Practical support with visible local impact",
+      "Help that reaches children, families, and schools",
+      "Ways to give, volunteer, or partner"
+    ],
+    priorityTitle: "Right now, support is especially useful for",
+    priorities: [
+      "School kits, notebooks, and basic stationery",
+      "Books and teaching materials for field sessions",
+      "Volunteer-led learning and community activities",
+      "Regular visits with children and families"
+    ],
+    waysTitle: "How you can step in",
+    itemsTitle: "What your support makes possible",
     items: [
       {
         title: "Learning materials",
-        description: "Help provide notebooks, pencils, books, and other essentials that make daily learning possible."
+        description: "Provide notebooks, pencils, books, and the basic tools children need for everyday learning."
       },
       {
         title: "Community sessions",
-        description: "Support group learning activities, volunteer-led sessions, and parent/community meetings in the field."
+        description: "Support group learning sessions, volunteer-led activities, and meetings with parents and communities."
       },
       {
         title: "On-ground outreach",
-        description: "Help sustain field visits, school coordination, and direct engagement with families and local communities."
+        description: "Help sustain field visits, school coordination, and direct engagement with families."
       }
     ],
     ways: [
       {
         title: "Donate directly",
-        description: "Reach us by phone or email to contribute toward current needs, education drives, and local field activities."
+        description: "Reach us by phone or email to support current needs, education drives, and local field work."
       },
       {
         title: "Sponsor a need",
-        description: "You can support school kits, learning materials, or specific child and community-focused activities."
+        description: "Support school kits, learning materials, or specific child and community-focused activities."
       },
       {
         title: "Volunteer or partner",
-        description: "Support the mission through time, professional skills, local outreach, or collaboration with schools and communities."
+        description: "Support the mission through your time, professional skills, local outreach, or school collaboration."
       },
       {
         title: "Partner or CSR support",
-        description: "Schools, businesses, local groups, and CSR teams can support books, materials, sessions, or recurring community learning needs in a more structured way."
+        description: "Schools, businesses, local groups, and CSR teams can back books, materials, sessions, or recurring learning needs in a structured way."
       }
     ],
     note:
-      "We are ready to accept support and donations. UPI or bank details can be shared directly until a full online donation flow is added."
+      "We are ready to receive support now. UPI or bank details can be shared directly until a full online donation flow is live."
   },
 
   updates: [

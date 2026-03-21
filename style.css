@@ -631,24 +631,6 @@ h1 {
   margin-bottom: 14px;
 }
 
-.current-needs-section {
-  padding-top: 0;
-}
-
-.current-needs-strip {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 18px;
-  align-items: center;
-  padding: 20px 22px;
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at top left, rgba(201, 109, 61, 0.12), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(247, 242, 234, 0.96));
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
 .current-needs-copy h2 {
   margin-bottom: 8px;
 }
@@ -1312,8 +1294,18 @@ h1 {
 
 .support-copy {
   display: grid;
-  gap: 12px;
+  gap: 16px;
   align-content: start;
+}
+
+.support-highlights {
+  gap: 10px;
+}
+
+.support-highlights .highlight-chip {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: white;
 }
 
 .support-quick-actions {
@@ -1332,18 +1324,75 @@ h1 {
   margin-bottom: 0;
 }
 
+.support-priority-block {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(10, 24, 18, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.support-priority-head strong {
+  display: block;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.support-priority-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+}
+
+.support-priority-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+}
+
+.support-priority-mark {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff1d9;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .support-note {
   color: rgba(255, 255, 255, 0.78);
 }
 
 .support-panel {
   display: grid;
-  gap: 14px;
+  gap: 18px;
+}
+
+.support-panel-section {
+  display: grid;
+  gap: 12px;
+}
+
+.support-panel-label {
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
 }
 
 .support-methods {
   display: grid;
   gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .support-way {
@@ -1366,6 +1415,7 @@ h1 {
 .support-grid {
   display: grid;
   gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
 .support-card {
@@ -1598,6 +1648,12 @@ footer {
 
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .support-methods,
+  .support-grid,
+  .support-priority-list {
+    grid-template-columns: 1fr;
   }
 
   .footer-cta {

@@ -316,27 +316,6 @@ function renderImpactStory() {
     .join("");
 }
 
-function renderCurrentNeeds() {
-  const titleEl = document.getElementById("currentNeedsTitle");
-  const descriptionEl = document.getElementById("currentNeedsDescription");
-  const listEl = document.getElementById("currentNeedsList");
-  const currentNeeds = siteContent.currentNeeds || {};
-  const items = currentNeeds.items || [];
-
-  if (titleEl) titleEl.textContent = currentNeeds.title || "";
-  if (descriptionEl) descriptionEl.textContent = currentNeeds.description || "";
-  if (!listEl) return;
-
-  if (!items.length) {
-    listEl.innerHTML = "";
-    return;
-  }
-
-  listEl.innerHTML = items
-    .map((item) => `<span class="highlight-chip">${escapeHTML(item)}</span>`)
-    .join("");
-}
-
 function renderProof() {
   const container = document.getElementById("proofGrid");
   const proof = siteContent.proof || [];
@@ -436,14 +415,43 @@ function renderSupport() {
   const noteEl = document.getElementById("supportNote");
   const gridEl = document.getElementById("supportGrid");
   const waysEl = document.getElementById("supportWays");
+  const highlightsEl = document.getElementById("supportHighlights");
+  const priorityTitleEl = document.getElementById("supportPriorityTitle");
+  const priorityListEl = document.getElementById("supportPriorityList");
+  const waysTitleEl = document.getElementById("supportWaysTitle");
+  const itemsTitleEl = document.getElementById("supportItemsTitle");
   const support = siteContent.support || {};
   const items = support.items || [];
   const ways = support.ways || [];
+  const highlights = support.highlights || [];
+  const priorities = support.priorities || [];
 
   if (titleEl) titleEl.textContent = support.title || "";
   if (descriptionEl) descriptionEl.textContent = support.description || "";
   if (noteEl) noteEl.textContent = support.note || "";
+  if (priorityTitleEl) priorityTitleEl.textContent = support.priorityTitle || "";
+  if (waysTitleEl) waysTitleEl.textContent = support.waysTitle || "";
+  if (itemsTitleEl) itemsTitleEl.textContent = support.itemsTitle || "";
   if (!gridEl || !waysEl) return;
+
+  if (highlightsEl) {
+    highlightsEl.innerHTML = highlights
+      .map((item) => `<span class="highlight-chip">${escapeHTML(item)}</span>`)
+      .join("");
+  }
+
+  if (priorityListEl) {
+    priorityListEl.innerHTML = priorities
+      .map(
+        (item) => `
+          <div class="support-priority-item">
+            <span class="support-priority-mark">+</span>
+            <span>${escapeHTML(item)}</span>
+          </div>
+        `
+      )
+      .join("");
+  }
 
   if (!ways.length) {
     waysEl.innerHTML = "";
@@ -860,7 +868,6 @@ function init() {
   renderBarriers();
   renderFutureReadiness();
   renderImpactStory();
-  renderCurrentNeeds();
   renderSupport();
   renderUpdates();
   renderGallery();
