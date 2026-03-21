@@ -26,6 +26,9 @@
   />
   <meta name="twitter:image" content="https://www.miraisociety.org/images/hero.jpeg" />
   <link rel="canonical" href="https://www.miraisociety.org/volunteer.html" />
+  <link rel="alternate" hreflang="en" href="https://www.miraisociety.org/volunteer.html" />
+  <link rel="alternate" hreflang="hi" href="https://www.miraisociety.org/hi/volunteer.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.miraisociety.org/volunteer.html" />
   <link rel="icon" href="images/logo.jpg" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -300,7 +303,10 @@
     // Render volunteer team members
     function renderVolunteersGrid() {
       const container = document.getElementById("volunteersGrid");
-      const members = ((siteContent.team || {}).members || []).filter(m => m.category === "Volunteers");
+      const members = ((siteContent.team || {}).members || []).filter(
+        (m) => ["Volunteers", "स्वयंसेवक"].includes(m.category)
+      );
+      const categoryLabel = (window.currentLang || "en") === "hi" ? "स्वयंसेवक" : "Join Us";
       if (!container || !members.length) return;
       container.innerHTML = `
         <section class="team-group">
@@ -309,7 +315,7 @@
               <article class="team-card">
                 <img class="team-image" src="${escapeHTML(member.image || '')}" alt="${escapeHTML(member.name)}" loading="lazy" decoding="async" />
                 <div class="team-body">
-                  <span class="team-category">Join Us</span>
+                  <span class="team-category">${escapeHTML(categoryLabel)}</span>
                   <h3>${escapeHTML(member.name)}</h3>
                   <p>${escapeHTML(member.bio || '')}</p>
                 </div>
