@@ -2427,6 +2427,37 @@ footer {
   }
 }
 
+/* ── Language toggle ── */
+.lang-toggle {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lang-toggle:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.lang-hi {
+  font-family: 'Hind', sans-serif;
+}
+
+.lang-hi h1, .lang-hi h2, .lang-hi h3, .lang-hi h4 {
+  font-family: 'Hind', sans-serif;
+  font-weight: 700;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
