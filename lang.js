@@ -166,8 +166,8 @@
     setText(".footer-text", "हम बच्चों, परिवारों और स्थानीय समुदायों के साथ मिलकर व्यावहारिक सहयोग, विश्वास और निरंतर उपस्थिति के माध्यम से शिक्षा तक पहुँच को मजबूत करते हैं।");
     setText(".footer-note", "पंजीकृत संस्था · भारत · उत्तराखंड से शुरू होकर पूरे भारत में राष्ट्रीय शिक्षा मिशन का निर्माण।");
     setHTML(".footer-meta div:last-child", "© <span id=\"year\"></span> Mirai Society. सर्वाधिकार सुरक्षित।");
-    setAttr("#whatsappFloat", "aria-label", "WhatsApp पर Mirai Society से बात करें");
-    setText("#whatsappFloat span", "WhatsApp");
+    setAttr("#whatsappFloat", "aria-label", "हमसे बात करें");
+    setText("#whatsappFloat span", "हमसे बात करें");
     setAttr("#lightboxClose", "aria-label", "छवि दर्शक बंद करें");
     setAttr(".lightbox-dialog", "aria-label", "बड़ी छवि");
   }
