@@ -405,6 +405,7 @@ const siteContent = {
     email: "miraisocietyuttarakhand@gmail.com",
     mobile: "+91-9761191140",
     mobileSecondary: "+91-9760115189",
+    mobileTertiary: "+91-9717098383",
     whatsapp: "https://wa.me/919761191140",
     instagram: "https://www.instagram.com/miraisociety_",
     facebook: "https://www.facebook.com/share/18QomgV2py/"
