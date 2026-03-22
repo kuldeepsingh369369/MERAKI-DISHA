@@ -107,8 +107,8 @@ const siteContent = {
       },
       {
         name: "Agrata Agrawal",
-        role: "Core Team Member",
-        bio: "Software engineer supporting Mirai Society with branding, digital thinking, and practical creative input that strengthens how the organization presents its work.",
+        role: "Technology & Data Advisor",
+        bio: "Technology & Data Advisor supporting Mirai Society with branding, digital thinking, data-led clarity, and practical creative input that strengthens how the organization presents its work.",
         image: "images/Agrata.png",
         category: "Management"
       },
@@ -257,7 +257,7 @@ const siteContent = {
   support: {
     title: "Support Mirai Society",
     description:
-      "Support Mirai Society through practical educational help that reaches children, families, and schools directly. It helps us respond faster with materials, field visits, and community-led learning support.",
+      "Support Mirai Society through practical and financial help that reaches children, families, and schools directly. It helps us respond faster with materials, field visits, teacher support, facility costs, and community-led learning support.",
     highlights: [
       "Practical support with visible local impact",
       "Help that reaches children, families, and schools",
@@ -267,6 +267,7 @@ const siteContent = {
     priorities: [
       "School kits, notebooks, and basic stationery",
       "Books and teaching materials for field sessions",
+      "Teacher support and learning-center facility rent",
       "Volunteer-led learning and community activities",
       "Regular visits with children and families"
     ],
@@ -284,16 +285,20 @@ const siteContent = {
       {
         title: "On-ground outreach",
         description: "Help sustain field visits, school coordination, and direct engagement with families."
+      },
+      {
+        title: "Teacher and facility support",
+        description: "Financial support helps cover teacher salaries, learning-center rent, and the recurring costs that keep educational support running consistently."
       }
     ],
     ways: [
       {
         title: "Donate directly",
-        description: "Reach us by phone or email to support current needs, education drives, and local field work."
+        description: "Reach us by phone or email to provide financial support for current needs, teacher support, facility rent, education drives, and local field work."
       },
       {
         title: "Sponsor a need",
-        description: "Support school kits, learning materials, or specific child and community-focused activities."
+        description: "Support school kits, learning materials, teacher support, facility costs, or specific child and community-focused activities."
       },
       {
         title: "Volunteer or partner",
@@ -301,11 +306,11 @@ const siteContent = {
       },
       {
         title: "Partner or CSR support",
-        description: "Schools, businesses, local groups, and CSR teams can back books, materials, sessions, or recurring learning needs in a structured way."
+        description: "Schools, businesses, local groups, and CSR teams can back books, materials, sessions, teacher support, facility rent, or recurring learning needs in a structured way."
       }
     ],
     note:
-      "We are ready to receive support now. UPI or bank details can be shared directly until a full online donation flow is live."
+      "We are ready to receive support now. Financial support, UPI, or bank details can be shared directly until a full online donation flow is live."
   },
 
   updates: [
@@ -572,7 +577,7 @@ const siteContentHi = {
       { role: "अध्यक्ष • संस्थापक", category: "प्रबंधन", bio: "M.Sc रसायन विज्ञान शिक्षक, Mirai Society की दृष्टि, दिशा और शैक्षणिक नेतृत्व का समर्थन करते हैं।" },
       { role: "महासचिव • संस्थापक", category: "प्रबंधन", bio: "M.Sc रसायन विज्ञान शिक्षक, संगठनात्मक योजना, सामुदायिक जुड़ाव और Mirai Society के दीर्घकालिक मिशन का नेतृत्व करते हैं।" },
       { role: "संयुक्त सचिव", category: "प्रबंधन", bio: "M.Sc प्राणी विज्ञान शिक्षक, शैक्षणिक गतिविधियों, समन्वय और छात्रों व समुदायों के साथ ज़मीनी जुड़ाव में योगदान देते हैं।" },
-      { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "सॉफ्टवेयर इंजीनियर, Mirai Society की ब्रांडिंग, डिजिटल सोच और संगठन के काम को स्पष्ट व प्रभावी रूप से प्रस्तुत करने में सहयोग देती हैं।" },
+      { role: "तकनीक एवं डेटा सलाहकार", category: "प्रबंधन", bio: "Mirai Society की तकनीक, डेटा समझ, ब्रांडिंग और डिजिटल प्रस्तुति को अधिक स्पष्ट, व्यवस्थित और प्रभावी बनाने में सहयोग देती हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "B.Tech इंजीनियर, Mirai Society की पहलों में समन्वय, निष्पादन और व्यावहारिक समस्या-समाधान के माध्यम से टीम का समर्थन करते हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "ITI-प्रशिक्षित सदस्य, सामुदायिक पहलों में व्यावहारिक सहायता, समन्वय और दैनिक निष्पादन में योगदान देते हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "IIT मंडी से विकास अध्ययन में मास्टर्स और राजनीतिक सलाहकार, रणनीति, सामाजिक समझ और सामुदायिक केंद्रित योजना में सहायता करते हैं।" },
@@ -639,7 +644,7 @@ const siteContentHi = {
 
   support: {
     title: "Mirai Society का समर्थन करें",
-    description: "व्यावहारिक शैक्षणिक सहायता के माध्यम से Mirai Society का समर्थन करें जो बच्चों, परिवारों और स्कूलों तक सीधे पहुँचती है।",
+    description: "व्यावहारिक और वित्तीय सहायता के माध्यम से Mirai Society का समर्थन करें, जो बच्चों, परिवारों और स्कूलों तक सीधे पहुँचती है। इससे शिक्षकों का सहयोग, केंद्र का किराया, सामग्री और फील्ड सहायता लगातार चलती रह सकती है।",
     highlights: [
       "दृश्यमान स्थानीय प्रभाव के साथ व्यावहारिक सहायता",
       "बच्चों, परिवारों और स्कूलों तक पहुँचने वाली मदद",
@@ -649,6 +654,7 @@ const siteContentHi = {
     priorities: [
       "स्कूल किट, नोटबुक और बुनियादी स्टेशनरी",
       "फील्ड सत्रों के लिए किताबें और शिक्षण सामग्री",
+      "शिक्षक सहयोग और लर्निंग सेंटर का किराया",
       "स्वयंसेवक-नेतृत्व वाली शिक्षा और सामुदायिक गतिविधियाँ",
       "बच्चों और परिवारों के साथ नियमित दौरे"
     ],
@@ -657,15 +663,16 @@ const siteContentHi = {
     items: [
       { title: "सीखने की सामग्री", description: "नोटबुक, पेंसिल, किताबें और बच्चों की रोज़मर्रा की ज़रूरतें प्रदान करें।" },
       { title: "सामुदायिक सत्र", description: "समूह सीखने के सत्र, स्वयंसेवक गतिविधियाँ और अभिभावक-सामुदायिक बैठकों का समर्थन करें।" },
-      { title: "ज़मीनी आउटरीच", description: "फील्ड दौरे, स्कूल समन्वय और परिवारों के साथ प्रत्यक्ष जुड़ाव बनाए रखने में मदद करें।" }
+      { title: "ज़मीनी आउटरीच", description: "फील्ड दौरे, स्कूल समन्वय और परिवारों के साथ प्रत्यक्ष जुड़ाव बनाए रखने में मदद करें।" },
+      { title: "शिक्षक और केंद्र सहयोग", description: "वित्तीय सहायता शिक्षकों के मानदेय, लर्निंग सेंटर के किराये और नियमित संचालन लागत को संभालने में मदद करती है।" }
     ],
     ways: [
-      { title: "सीधे दान करें", description: "वर्तमान ज़रूरतों, शिक्षा अभियानों और स्थानीय फील्ड कार्य के समर्थन के लिए फोन या ईमेल से हम तक पहुँचें।" },
-      { title: "एक ज़रूरत को प्रायोजित करें", description: "स्कूल किट, सीखने की सामग्री या विशिष्ट बाल और सामुदायिक केंद्रित गतिविधियों का समर्थन करें।" },
+      { title: "सीधे दान करें", description: "वर्तमान ज़रूरतों, शिक्षक सहयोग, केंद्र किराये, शिक्षा अभियानों और स्थानीय फील्ड कार्य के समर्थन के लिए फोन या ईमेल से हम तक पहुँचें।" },
+      { title: "एक ज़रूरत को प्रायोजित करें", description: "स्कूल किट, सीखने की सामग्री, शिक्षक सहयोग, केंद्र किराये या विशिष्ट बाल और सामुदायिक गतिविधियों का समर्थन करें।" },
       { title: "स्वयंसेवा या साझेदारी", description: "अपने समय, पेशेवर कौशल, स्थानीय आउटरीच या स्कूल सहयोग के माध्यम से मिशन का समर्थन करें।" },
-      { title: "साझेदारी या CSR सहायता", description: "स्कूल, व्यवसाय, स्थानीय समूह और CSR टीमें किताबों, सामग्रियों, सत्रों या आवर्ती सीखने की ज़रूरतों का संरचित तरीके से समर्थन कर सकती हैं।" }
+      { title: "साझेदारी या CSR सहायता", description: "स्कूल, व्यवसाय, स्थानीय समूह और CSR टीमें किताबों, सामग्रियों, सत्रों, शिक्षक सहयोग, केंद्र किराये या आवर्ती सीखने की ज़रूरतों का संरचित तरीके से समर्थन कर सकती हैं।" }
     ],
-    note: "हम अभी सहायता प्राप्त करने के लिए तैयार हैं। UPI या बैंक विवरण सीधे साझा किया जा सकता है।"
+    note: "हम अभी सहायता प्राप्त करने के लिए तैयार हैं। वित्तीय सहायता, UPI या बैंक विवरण सीधे साझा किया जा सकता है।"
   },
 
   updates: [
