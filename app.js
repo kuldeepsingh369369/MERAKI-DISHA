@@ -821,10 +821,11 @@ function renderContact() {
     contact.mobileSecondary,
     contact.phone
   ].filter(Boolean);
+  const footerOnlyNumbers = [contact.mobileTertiary].filter(Boolean);
   const socialLinks = [];
 
   const socialEntries = Object.entries(contact)
-    .filter(([key]) => !["email", "mobile", "mobileSecondary", "phone"].includes(key))
+    .filter(([key]) => !["email", "mobile", "mobileSecondary", "mobileTertiary", "phone"].includes(key))
     .map(([key, value]) => ({
       key,
       label: formatPlatformName(key),
@@ -863,6 +864,12 @@ function renderContact() {
     topContactItems.push(
       `<a class="top-contact-link" href="tel:${escapeHTML(mobile)}">${escapeHTML(mobile)}</a>`
     );
+    footerContactItems.push(
+      `<a class="footer-contact-link" href="tel:${escapeHTML(mobile)}">${escapeHTML(mobile)}</a>`
+    );
+  });
+
+  footerOnlyNumbers.forEach((mobile) => {
     footerContactItems.push(
       `<a class="footer-contact-link" href="tel:${escapeHTML(mobile)}">${escapeHTML(mobile)}</a>`
     );
