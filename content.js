@@ -88,14 +88,14 @@ const siteContent = {
         name: "Manjeet Singh",
         role: "President • Founder",
         bio: "M.Sc Chemistry teacher supporting the vision, direction, and educational leadership of Mirai Society.",
-        image: "images/Manjeet.jpg",
+        image: "images/Manjeet.png",
         category: "Management"
       },
       {
         name: "Nikunj Chauhan",
         role: "General Secretary • Founder",
         bio: "M.Sc Chemistry teacher helping lead organizational planning, community engagement, and the long-term mission of Mirai Society.",
-        image: "images/Nikunj.jpg",
+        image: "images/Nikunj.png",
         category: "Management"
       },
       {
@@ -106,17 +106,24 @@ const siteContent = {
         category: "Management"
       },
       {
+        name: "Agrata Agrawal",
+        role: "Core Team Member",
+        bio: "Software engineer supporting Mirai Society with branding, digital thinking, and practical creative input that strengthens how the organization presents its work.",
+        image: "images/Agrata.png",
+        category: "Management"
+      },
+      {
         name: "Harpreet Singh",
         role: "Core Team Member",
         bio: "B.Tech engineer supporting the team through coordination, execution, and practical problem-solving across Mirai Society initiatives.",
-        image: "images/Harpreet.jpg",
+        image: "images/Harpreet.png",
         category: "Management"
       },
       {
         name: "Rohit",
         role: "Core Team Member",
         bio: "ITI-trained team member contributing to practical support, coordination, and day-to-day execution across community initiatives.",
-        image: "images/Rohit.jpg",
+        image: "images/Rohit.png",
         category: "Management"
       },
       {
@@ -130,14 +137,14 @@ const siteContent = {
         name: "Estuti Singh",
         role: "Core Team Member",
         bio: "Teacher with a master's in political studies contributing to educational support and community engagement.",
-        image: "images/Estuti.jpg",
+        image: "images/Estuti.png",
         category: "Management"
       },
       {
         name: "Prashant Chaudary",
         role: "Core Team Member",
         bio: "M.Sc in Microbiology and chemist supporting the organization with practical coordination and cross-functional contribution.",
-        image: "images/Prashant.jpg",
+        image: "images/Prashant.png",
         category: "Management"
       },
       {
@@ -565,6 +572,7 @@ const siteContentHi = {
       { role: "अध्यक्ष • संस्थापक", category: "प्रबंधन", bio: "M.Sc रसायन विज्ञान शिक्षक, Mirai Society की दृष्टि, दिशा और शैक्षणिक नेतृत्व का समर्थन करते हैं।" },
       { role: "महासचिव • संस्थापक", category: "प्रबंधन", bio: "M.Sc रसायन विज्ञान शिक्षक, संगठनात्मक योजना, सामुदायिक जुड़ाव और Mirai Society के दीर्घकालिक मिशन का नेतृत्व करते हैं।" },
       { role: "संयुक्त सचिव", category: "प्रबंधन", bio: "M.Sc प्राणी विज्ञान शिक्षक, शैक्षणिक गतिविधियों, समन्वय और छात्रों व समुदायों के साथ ज़मीनी जुड़ाव में योगदान देते हैं।" },
+      { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "सॉफ्टवेयर इंजीनियर, Mirai Society की ब्रांडिंग, डिजिटल सोच और संगठन के काम को स्पष्ट व प्रभावी रूप से प्रस्तुत करने में सहयोग देती हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "B.Tech इंजीनियर, Mirai Society की पहलों में समन्वय, निष्पादन और व्यावहारिक समस्या-समाधान के माध्यम से टीम का समर्थन करते हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "ITI-प्रशिक्षित सदस्य, सामुदायिक पहलों में व्यावहारिक सहायता, समन्वय और दैनिक निष्पादन में योगदान देते हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "IIT मंडी से विकास अध्ययन में मास्टर्स और राजनीतिक सलाहकार, रणनीति, सामाजिक समझ और सामुदायिक केंद्रित योजना में सहायता करते हैं।" },

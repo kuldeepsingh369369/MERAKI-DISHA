@@ -432,13 +432,18 @@ function renderTeam() {
 
                 return `
                   <article class="team-card">
-                    <img
-                      class="team-image"
-                      src="${escapeHTML(resolveAssetPath(member.image) || fallbackImage())}"
-                      alt="${escapeHTML(member.name)}"
-                      loading="lazy"
-                      decoding="async"
-                    />
+                    <div class="team-media">
+                      <img
+                        class="team-image"
+                        src="${escapeHTML(resolveAssetPath(member.image) || fallbackImage())}"
+                        alt="${escapeHTML(member.name)}"
+                        ${(member.imageFit || member.imagePosition || member.imageSize)
+                          ? `style="${member.imageFit ? `object-fit:${escapeHTML(member.imageFit)};` : ""}${member.imagePosition ? `object-position:${escapeHTML(member.imagePosition)};` : ""}${member.imageSize ? `width:${escapeHTML(member.imageSize)}px;height:${escapeHTML(member.imageSize)}px;` : ""}"`
+                          : ""}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
                     <div class="team-body">
                       <span class="team-category">${escapeHTML(member.category || uiText("team"))}</span>
                       <h3>${escapeHTML(member.name)}</h3>
