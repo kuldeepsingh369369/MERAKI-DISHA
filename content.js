@@ -190,11 +190,11 @@ const siteContent = {
         category: "Volunteers"
       },
       {
-        name: "Growing Volunteer Network",
-        role: "Volunteer Team",
+        name: "Our Volunteer Team",
+        role: "",
         bio: "Our wider volunteer group continues to grow with students, supporters, and community members contributing time, guidance, outreach, and practical help.",
         image: "images/Volunteers.jpg",
-        category: "Volunteer Team",
+        category: "Volunteers",
         layout: "wide",
         imageFit: "cover",
         imagePosition: "center center"
@@ -346,6 +346,15 @@ const siteContent = {
 
   updates: [
     {
+      title: "Clean Drive at Daat Kaali Ma Mandir 2026",
+      date: "2026",
+      location: "Dehradun, Uttarakhand",
+      description:
+        "Mirai Society volunteers joined a community clean drive at Daat Kaali Ma Mandir, supporting a cleaner shared space through hands-on local participation.",
+      image: "images/clean-drive-2026/clean-drive-daat-kaali-2026-2.jpg",
+      alt: "Mirai Society volunteers during the Clean Drive at Daat Kaali Ma Mandir in 2026"
+    },
+    {
       title: "School Kit Distribution Drive",
       date: "March 2026",
       location: "Uttarakhand",
@@ -403,6 +412,26 @@ const siteContent = {
 
   gallery: [
     {
+      image: "images/clean-drive-2026/clean-drive-daat-kaali-2026-1.jpg",
+      alt: "Mirai Society volunteers during the Clean Drive at Daat Kaali Ma Mandir in 2026",
+      caption: "Clean Drive at Daat Kaali Ma Mandir 2026"
+    },
+    {
+      image: "images/clean-drive-2026/clean-drive-daat-kaali-2026-2.jpg",
+      alt: "Mirai Society team taking part in the Clean Drive at Daat Kaali Ma Mandir in 2026",
+      caption: "Clean Drive at Daat Kaali Ma Mandir 2026"
+    },
+    {
+      image: "images/clean-drive-2026/clean-drive-daat-kaali-2026-3.jpg",
+      alt: "Community clean drive activity by Mirai Society at Daat Kaali Ma Mandir in 2026",
+      caption: "Clean Drive at Daat Kaali Ma Mandir 2026"
+    },
+    {
+      image: "images/clean-drive-2026/clean-drive-daat-kaali-2026-4.jpg",
+      alt: "Mirai Society Clean Drive at Daat Kaali Ma Mandir in Dehradun in 2026",
+      caption: "Clean Drive at Daat Kaali Ma Mandir 2026"
+    },
+    {
       image: "images/gallery-1.jpg",
       alt: "Parents and community members attending a Mirai Society awareness session",
       caption: "Community conversations around school participation and children's learning"
@@ -426,9 +455,14 @@ const siteContent = {
 
   videos: [
     {
-      title: "Inside a Mirai Society Field Visit",
-      description: "A short view into our community work, educational outreach, and time spent with children and families.",
-      url: "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+      title: "Clean Drive at Daat Kaali Mandir, Dehradun",
+      description: "",
+      url: "https://www.youtube.com/shorts/fxV5cyH9Zw0?si=1xFKwEDyI78vZbPc"
+    },
+    {
+      title: "Mirai Society Field Short",
+      description: "A quick look at Mirai Society's education-focused community work on the ground.",
+      url: "https://youtube.com/shorts/9vPMHzkjkcs?si=9vTA_PuGu50Qn-iQ"
     }
   ],
 
@@ -621,7 +655,7 @@ const siteContentHi = {
       { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "विज्ञान की छात्रा, जिन्होंने हाल ही में कक्षा 12 पूरी की है। वे शिक्षा, सामुदायिक सेवा और सार्थक सामाजिक पहलों के माध्यम से सकारात्मक प्रभाव बनाने के लिए उत्साहित हैं।" },
       { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "रसायन विज्ञान में मास्टर्स डिग्री के साथ, Prabhat Chauhan Mirai Society में सक्रिय योगदान देते हैं और छात्रों को उज्जवल भविष्य की ओर मार्गदर्शन व प्रेरणा देते हैं।" },
       { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "B.A. की छात्रा, जो Mirai Society के माध्यम से बच्चों की शिक्षा का समर्थन करके सकारात्मक बदलाव लाने के लिए समर्पित हैं।" },
-      { role: "स्वयंसेवक टीम", category: "स्वयंसेवक टीम", bio: "हमारा व्यापक स्वयंसेवक समूह लगातार बढ़ रहा है, जिसमें छात्र, समर्थक और समुदाय के सदस्य समय, मार्गदर्शन, आउटरीच और व्यावहारिक सहयोग दे रहे हैं।" }
+      { role: "", category: "स्वयंसेवक", bio: "हमारा व्यापक स्वयंसेवक समूह लगातार बढ़ रहा है, जिसमें छात्र, समर्थक और समुदाय के सदस्य समय, मार्गदर्शन, आउटरीच और व्यावहारिक सहयोग दे रहे हैं।" }
     ]
   },
 
@@ -712,6 +746,14 @@ const siteContentHi = {
   },
 
   updates: [
+    {
+      title: "दात काली मा मंदिर Clean Drive 2026",
+      date: "2026",
+      location: "देहरादून, उत्तराखंड",
+      description:
+        "Mirai Society के स्वयंसेवकों ने दात काली मा मंदिर में सामुदायिक Clean Drive में भाग लिया और स्थानीय स्तर पर स्वच्छ साझा स्थान के लिए योगदान दिया।",
+      alt: "2026 में दात काली मा मंदिर में Clean Drive के दौरान Mirai Society के स्वयंसेवक"
+    },
     { title: "स्कूल किट वितरण अभियान", date: "मार्च 2026", location: "उत्तराखंड", description: "बच्चों को नोटबुक, पेंसिल और अन्य ज़रूरी चीज़ें मिलीं ताकि स्कूल चक्र व्यावहारिक सीखने की सामग्री के साथ शुरू हो सके।", alt: "Mirai Society के वितरण अभियान में बच्चों को स्कूल किट और शैक्षणिक सामग्री मिलती हुई" },
     { title: "स्वयंसेवक-नेतृत्व वाला सीखने का सत्र", date: "फरवरी 2026", location: "उत्तराखंड", description: "स्वयंसेवकों ने एक साझा पठन और सीखने का सत्र आयोजित किया जिसने बच्चों में भागीदारी, जिज्ञासा और सहकर्मी शिक्षा को प्रोत्साहित किया।", alt: "Mirai Society के साथ स्वयंसेवक-नेतृत्व वाले सीखने के सत्र में भाग लेते बच्चे" },
     { title: "अभिभावक जागरूकता बैठक", date: "जनवरी 2026", location: "उत्तराखंड", description: "हमने अभिभावकों और सामुदायिक सदस्यों से नियमित स्कूल उपस्थिति, घर पर सहायता और बच्चे की शिक्षा में जुड़े रहने पर चर्चा की।", alt: "Mirai Society की जागरूकता बैठक में एकत्रित अभिभावक और सामुदायिक सदस्य" },
@@ -721,6 +763,10 @@ const siteContentHi = {
   ],
 
   gallery: [
+    { alt: "2026 में दात काली मा मंदिर में Clean Drive के दौरान Mirai Society के स्वयंसेवक", caption: "दात काली मा मंदिर Clean Drive 2026" },
+    { alt: "2026 में दात काली मा मंदिर Clean Drive में भाग लेती Mirai Society टीम", caption: "दात काली मा मंदिर Clean Drive 2026" },
+    { alt: "2026 में दात काली मा मंदिर में Mirai Society की सामुदायिक स्वच्छता गतिविधि", caption: "दात काली मा मंदिर Clean Drive 2026" },
+    { alt: "2026 में देहरादून के दात काली मा मंदिर में Mirai Society Clean Drive", caption: "दात काली मा मंदिर Clean Drive 2026" },
     { alt: "Mirai Society के जागरूकता सत्र में शामिल अभिभावक और सामुदायिक सदस्य", caption: "स्कूल भागीदारी और बच्चों की शिक्षा पर सामुदायिक बातचीत" },
     { alt: "Mirai Society द्वारा समर्थित समूह शिक्षण गतिविधि में भाग लेते बच्चे", caption: "साझा सीखने के पल जो आत्मविश्वास और भागीदारी बनाते हैं" },
     { alt: "Mirai Society की फील्ड गतिविधि के दौरान एकत्रित छात्र", caption: "फील्ड गतिविधियाँ जो बच्चों को सहायता और प्रोत्साहन से जोड़ती हैं" },
@@ -728,7 +774,8 @@ const siteContentHi = {
   ],
 
   videos: [
-    { title: "Mirai Society के फील्ड दौरे के अंदर", description: "हमारे सामुदायिक कार्य, शैक्षणिक आउटरीच और बच्चों व परिवारों के साथ बिताए समय की एक झलक।" }
+    { title: "दात काली मंदिर, देहरादून में स्वच्छता अभियान", description: "" },
+    { title: "Mirai Society फील्ड शॉर्ट", description: "ज़मीन पर Mirai Society के शिक्षा-केंद्रित सामुदायिक कार्य की एक छोटी झलक।" }
   ],
 
   trust: {

@@ -305,7 +305,7 @@
     function renderVolunteersGrid() {
       const container = document.getElementById("volunteersGrid");
       const members = ((siteContent.team || {}).members || []).filter(
-        (m) => ["Volunteers", "स्वयंसेवक", "Volunteer Team", "स्वयंसेवक टीम"].includes(m.category)
+        (m) => ["Volunteers", "स्वयंसेवक"].includes(m.category)
       );
       const categoryLabel = (window.currentLang || "en") === "hi" ? "स्वयंसेवक" : "Join Us";
       if (!container || !members.length) return;
