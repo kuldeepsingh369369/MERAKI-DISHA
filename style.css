@@ -1049,6 +1049,10 @@ h1 {
   text-align: center;
 }
 
+.team-card-wide {
+  grid-column: 1 / -1;
+}
+
 .team-media {
   display: flex;
   justify-content: center;
@@ -1072,6 +1076,15 @@ h1 {
   object-position: center top;
   background: #eef3ee;
   border: 1px solid rgba(31, 122, 79, 0.12);
+}
+
+.team-image-wide {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  object-position: center center;
 }
 
 .team-body {

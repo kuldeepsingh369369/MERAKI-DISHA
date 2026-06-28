@@ -134,13 +134,6 @@ const siteContent = {
         category: "Management"
       },
       {
-        name: "Estuti Singh",
-        role: "Core Team Member",
-        bio: "Teacher with a master's in political studies contributing to educational support and community engagement.",
-        image: "images/Estuti.png",
-        category: "Management"
-      },
-      {
         name: "Prashant Chaudary",
         role: "Core Team Member",
         bio: "M.Sc in Microbiology and chemist supporting the organization with practical coordination and cross-functional contribution.",
@@ -167,6 +160,44 @@ const siteContent = {
         bio: "Educated through Mirai Society and now volunteering to support students while continuing his further studies.",
         image: "images/lavish-kamboj.jpg",
         category: "Volunteers"
+      },
+      {
+        name: "Garima",
+        role: "Volunteer",
+        bio: "Pursuing B.Sc. and passionately working with Mirai Society to empower children through education and guidance.",
+        image: "images/Garima.jpeg",
+        category: "Volunteers"
+      },
+      {
+        name: "Khusi",
+        role: "Volunteer",
+        bio: "A Science student who recently completed Class 12, she is passionate about education, community service, and creating a positive impact through meaningful social initiatives.",
+        image: "images/Khusi.jpg",
+        category: "Volunteers"
+      },
+      {
+        name: "Prabhat Chauhan",
+        role: "Volunteer",
+        bio: "With a Master's degree in Chemistry, Prabhat Chauhan actively contributes to Mirai Society, guiding and motivating students towards a brighter future.",
+        image: "images/Prabhat.jpg",
+        category: "Volunteers"
+      },
+      {
+        name: "Cheenu",
+        role: "Volunteer",
+        bio: "A B.A. student dedicated to creating positive change by supporting children's education through Mirai Society.",
+        image: "images/Cheenu.jpg",
+        category: "Volunteers"
+      },
+      {
+        name: "Growing Volunteer Network",
+        role: "Volunteer Team",
+        bio: "Our wider volunteer group continues to grow with students, supporters, and community members contributing time, guidance, outreach, and practical help.",
+        image: "images/Volunteers.jpg",
+        category: "Volunteer Team",
+        layout: "wide",
+        imageFit: "cover",
+        imagePosition: "center center"
       }
     ]
   },
@@ -582,11 +613,15 @@ const siteContentHi = {
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "B.Tech इंजीनियर, Mirai Society की पहलों में समन्वय, निष्पादन और व्यावहारिक समस्या-समाधान के माध्यम से टीम का समर्थन करते हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "ITI-प्रशिक्षित सदस्य, सामुदायिक पहलों में व्यावहारिक सहायता, समन्वय और दैनिक निष्पादन में योगदान देते हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "IIT मंडी से विकास अध्ययन में मास्टर्स और राजनीतिक सलाहकार, रणनीति, सामाजिक समझ और सामुदायिक केंद्रित योजना में सहायता करते हैं।" },
-      { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "राजनीतिक अध्ययन में मास्टर्स के साथ शिक्षक, शैक्षणिक सहायता और सामुदायिक जुड़ाव में योगदान देती हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "M.Sc माइक्रोबायोलॉजी और रसायनशास्त्री, व्यावहारिक समन्वय और बहु-कार्यात्मक योगदान के साथ संस्था का समर्थन करते हैं।" },
       { role: "मुख्य टीम सदस्य", category: "प्रबंधन", bio: "M.Sc वनस्पति विज्ञान और शिक्षक, छात्र सहायता, शैक्षणिक गतिविधियों और सामुदायिक कार्य में योगदान देती हैं।" },
       { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "Mirai Society से शिक्षित होकर अब अपनी पढ़ाई जारी रखते हुए छात्रों का समर्थन करने के लिए स्वयंसेवा कर रही हैं।" },
-      { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "Mirai Society से शिक्षित होकर अब अपनी पढ़ाई जारी रखते हुए छात्रों का समर्थन करने के लिए स्वयंसेवा कर रहे हैं।" }
+      { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "Mirai Society से शिक्षित होकर अब अपनी पढ़ाई जारी रखते हुए छात्रों का समर्थन करने के लिए स्वयंसेवा कर रहे हैं।" },
+      { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "B.Sc की पढ़ाई कर रही हैं और Mirai Society के साथ शिक्षा व मार्गदर्शन के माध्यम से बच्चों को सशक्त बनाने के लिए समर्पित रूप से काम कर रही हैं।" },
+      { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "विज्ञान की छात्रा, जिन्होंने हाल ही में कक्षा 12 पूरी की है। वे शिक्षा, सामुदायिक सेवा और सार्थक सामाजिक पहलों के माध्यम से सकारात्मक प्रभाव बनाने के लिए उत्साहित हैं।" },
+      { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "रसायन विज्ञान में मास्टर्स डिग्री के साथ, Prabhat Chauhan Mirai Society में सक्रिय योगदान देते हैं और छात्रों को उज्जवल भविष्य की ओर मार्गदर्शन व प्रेरणा देते हैं।" },
+      { role: "स्वयंसेवक", category: "स्वयंसेवक", bio: "B.A. की छात्रा, जो Mirai Society के माध्यम से बच्चों की शिक्षा का समर्थन करके सकारात्मक बदलाव लाने के लिए समर्पित हैं।" },
+      { role: "स्वयंसेवक टीम", category: "स्वयंसेवक टीम", bio: "हमारा व्यापक स्वयंसेवक समूह लगातार बढ़ रहा है, जिसमें छात्र, समर्थक और समुदाय के सदस्य समय, मार्गदर्शन, आउटरीच और व्यावहारिक सहयोग दे रहे हैं।" }
     ]
   },
 

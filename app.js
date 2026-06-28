@@ -430,11 +430,13 @@ function renderTeam() {
                   ? ""
                   : member.role || "";
 
+                const isWide = member.layout === "wide";
+
                 return `
-                  <article class="team-card">
+                  <article class="team-card${isWide ? " team-card-wide" : ""}">
                     <div class="team-media">
                       <img
-                        class="team-image"
+                        class="team-image${isWide ? " team-image-wide" : ""}"
                         src="${escapeHTML(resolveAssetPath(member.image) || fallbackImage())}"
                         alt="${escapeHTML(member.name)}"
                         ${(member.imageFit || member.imagePosition || member.imageSize)
