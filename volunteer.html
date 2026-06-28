@@ -313,8 +313,8 @@
         <section class="team-group">
           <div class="team-grid team-group-grid">
             ${members.map(member => `
-              <article class="team-card">
-                <img class="team-image" src="${escapeHTML(member.image || '')}" alt="${escapeHTML(member.name)}" loading="lazy" decoding="async" />
+              <article class="team-card${member.layout === "wide" ? " team-card-wide" : ""}">
+                <img class="team-image${member.layout === "wide" ? " team-image-wide" : ""}" src="${escapeHTML(resolveAssetPath(member.image) || '')}" alt="${escapeHTML(member.name)}" loading="lazy" decoding="async" />
                 <div class="team-body">
                   <span class="team-category">${escapeHTML(categoryLabel)}</span>
                   <h3>${escapeHTML(member.name)}</h3>

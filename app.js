@@ -159,6 +159,11 @@ function youtubeEmbed(url) {
       return `https://www.youtube.com/embed/${parsed.pathname.replace("/", "")}`;
     }
 
+    const shortsMatch = parsed.pathname.match(/^\/shorts\/([^/]+)/);
+    if (shortsMatch) {
+      return `https://www.youtube.com/embed/${shortsMatch[1]}?feature=oembed`;
+    }
+
     const videoId = parsed.searchParams.get("v");
     if (videoId) {
       return `https://www.youtube.com/embed/${videoId}`;
@@ -430,11 +435,13 @@ function renderTeam() {
                   ? ""
                   : member.role || "";
 
+                const isWide = member.layout === "wide";
+
                 return `
-                  <article class="team-card">
+                  <article class="team-card${isWide ? " team-card-wide" : ""}">
                     <div class="team-media">
                       <img
-                        class="team-image"
+                        class="team-image${isWide ? " team-image-wide" : ""}"
                         src="${escapeHTML(resolveAssetPath(member.image) || fallbackImage())}"
                         alt="${escapeHTML(member.name)}"
                         ${(member.imageFit || member.imagePosition || member.imageSize)
@@ -767,21 +774,20 @@ function renderVideos() {
     items
       .map((video) => {
       const embedUrl = youtubeEmbed(video.url);
+      const videoUrl = normalizeUrl(video.url);
+      const isShort = /youtube\.com\/shorts\//i.test(videoUrl);
 
       if (!embedUrl) {
         return `
           <article class="video-card">
-            <div class="video-body">
-              <h3>${escapeHTML(video.title)}</h3>
-              <p>${escapeHTML(video.description || uiText("videoUnavailable"))}</p>
-            </div>
+            <div class="empty-note">${escapeHTML(video.description || uiText("videoUnavailable"))}</div>
           </article>
         `;
       }
 
       return `
         <article class="video-card">
-          <div class="video-frame">
+          <div class="video-frame${isShort ? " video-frame-short" : ""}">
             <iframe
               src="${escapeHTML(embedUrl)}"
               title="${escapeHTML(video.title)}"
@@ -793,7 +799,6 @@ function renderVideos() {
           </div>
           <div class="video-body">
             <h3>${escapeHTML(video.title)}</h3>
-            <p>${escapeHTML(video.description || "")}</p>
           </div>
         </article>
       `;
